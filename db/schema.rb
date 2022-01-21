@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_20_125438) do
+ActiveRecord::Schema.define(version: 2022_01_21_065914) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -56,6 +56,8 @@ ActiveRecord::Schema.define(version: 2022_01_20_125438) do
     t.string "contact_no"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_admins_on_user_id"
   end
 
   create_table "agencies", force: :cascade do |t|
@@ -68,18 +70,22 @@ ActiveRecord::Schema.define(version: 2022_01_20_125438) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_agencies_on_user_id"
   end
 
   create_table "applicants", force: :cascade do |t|
     t.string "specialization"
     t.text "resume"
     t.string "educational_level"
-    t.integer "age"
     t.float "experience"
     t.string "fname"
     t.string "lname"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.datetime "birth_date", precision: 6
+    t.index ["user_id"], name: "index_applicants_on_user_id"
   end
 
   create_table "applications", force: :cascade do |t|
@@ -159,6 +165,9 @@ ActiveRecord::Schema.define(version: 2022_01_20_125438) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "admins", "users"
+  add_foreign_key "agencies", "users"
+  add_foreign_key "applicants", "users"
   add_foreign_key "applications", "applicants"
   add_foreign_key "applications", "jobs"
   add_foreign_key "branches", "agencies"
