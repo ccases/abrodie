@@ -29,15 +29,19 @@ pr = pra.create_admin!({
 agency1 = User.create!({email: "agency1@abrodie.com", password: "123456", password_confirmation: "123456"})
 # create an agency with license validity 700 days from seeding day
 agency = agency1.create_agency!({
-  name: "Brodie's Agency"
+  name: "Brodie's Agency",
   verified: true,
   kind: "private",
   license_validity: DateTime.current + 700,
-  contact_no: "09165555555"
+  contact_no: "09165555555",
   address: "2401 Taft Ave, Manila"
 })
 
 applicant1 = User.create!({email: "applicant1@abrodie.com", password: "123456", password_confirmation: "123456"})
 applicant = applicant1.create_applicant!({
-
+  fname: "Spongebob",
+  lname: "Squarepants",
+  educational_level: "High school graduate",
+  
+  specialization: "Cook"
 })
