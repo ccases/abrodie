@@ -1,1 +1,8 @@
 AGENCY FORM HAML
+= form.fields_for :agency, resource.agency do |af|
+  .field
+    = af.label :name
+    = af.text_field :name
+  .field
+    = af.label :kind
+    = af.text_field :kind

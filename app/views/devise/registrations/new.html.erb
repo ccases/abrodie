@@ -23,29 +23,9 @@
   
   <%# <div class="subform"> %>
     <% if @applicant %>
-      <%= f.fields_for :applicant, resource.build_applicant do |af| %>
-        <div class="field">
-          <%= af.label :fname, "First name" %>
-          <%= af.text_field :fname %>
-        </div>
-        <div class="field">
-          <%= af.label :lname, "Last name" %>
-          <%= af.text_field :lname %>
-        </div>
-      <% end %>
-
+      <%=render "devise/registrations/applicant/form", form: f%>
     <% elsif @agency %>
-        <%# <%=render partial: "devise/registrations/agency/form", locals: {:f => f}%>
-      <%= fields_for :agency do |af| %>
-        <div class="field">
-          <%= af.label :name %>
-          <%= af.text_field :name %>
-        </div>
-        <div class="field">
-          <%= af.label :kind %>
-          <%= af.text_field :kind %>
-        </div>
-      <% end %>
+      <%=render "devise/registrations/agency/form", form: f%>
     <% end %>
   <%# </div> %>
 

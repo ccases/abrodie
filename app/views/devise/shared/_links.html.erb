@@ -3,8 +3,8 @@
 <% end %>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <%= link_to "Sign up as an applicant", new_applicant_path %><br />
-  <%= link_to "Sign up your agency", new_agency_path %><br />
+  <%= link_to "Sign up as an applicant", new_user_path(user_type: "applicant") %><br />
+  <%= link_to "Sign up your agency", new_user_path(user_type: "agency") %><br />
 <% end %>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>

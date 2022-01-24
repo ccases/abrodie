@@ -1,9 +1,8 @@
 APPLICANT FORM HAML
--# -debugger
-=fields_for :applicant do |af|
+= form.fields_for :applicant, resource.applicant do |af|
   .field
-    =af.label :fname
-    =af.text_field :fname
+    = af.label :fname, "First name"
+    = af.text_field :fname
   .field
-    =af.label :lname
-    =af.text_field :lname
+    = af.label :lname, "Last name"
+    = af.text_field :lname

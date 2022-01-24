@@ -5,9 +5,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_one :applicant
-  has_one :agency
-  has_one :admin
+  has_one :applicant, dependent: :destroy
+  has_one :agency, dependent: :destroy
+  has_one :admin, dependent: :destroy
 
   accepts_nested_attributes_for :applicant, :agency, :admin
 
