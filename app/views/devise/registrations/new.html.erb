@@ -1,0 +1,57 @@
+<h2>Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+  
+  <%# <div class="subform"> %>
+    <% if @applicant %>
+      <%= f.fields_for :applicant, resource.build_applicant do |af| %>
+        <div class="field">
+          <%= af.label :fname, "First name" %>
+          <%= af.text_field :fname %>
+        </div>
+        <div class="field">
+          <%= af.label :lname, "Last name" %>
+          <%= af.text_field :lname %>
+        </div>
+      <% end %>
+
+    <% elsif @agency %>
+        <%# <%=render partial: "devise/registrations/agency/form", locals: {:f => f}%>
+      <%= fields_for :agency do |af| %>
+        <div class="field">
+          <%= af.label :name %>
+          <%= af.text_field :name %>
+        </div>
+        <div class="field">
+          <%= af.label :kind %>
+          <%= af.text_field :kind %>
+        </div>
+      <% end %>
+    <% end %>
+  <%# </div> %>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

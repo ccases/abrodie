@@ -2,8 +2,10 @@
 %p Find me in app/views/pages/index.html.haml
 
 -if current_user
-  =link_to "Sign out", destroy_user_session_path, method: :delete
+  =link_to "Sign out", destroy_user_session_path, data: { "turbo-method": :delete }
 -else
   =link_to "Sign in", new_user_session_path
-  =link_to "Sign up", new_user_registration_path
+  =link_to "Sign up as an applicant", new_applicant_path
+  =link_to "Sign up your agency", new_agency_path
 
+=link_to "Jobs", jobs_path

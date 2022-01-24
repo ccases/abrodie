@@ -1,0 +1,28 @@
+%h1 Jobs#index
+%p Find me in app/views/jobs/index.html.haml
+=link_to "Home", root_path
+-if current_user
+  -if current_user.admin
+    =link_to "Add new job", new_job_path
+
+  -elsif current_user.agency
+    =link_to "Post a job listing for your agency", new_job_path
+
+  -elsif current_user.applicant
+    =link_to "Apply now", "#"
+    -debugger
+-if @jobs.count == 0
+  No jobs to show
+-else
+  -@jobs.order('created_at DESC').each do |job|
+    %h3=job.title
+    %p=job.desc.truncate(40)
+    -if job.salary_hidden?
+      %p Salary hidden
+    -else
+      %p=job.salary
+    %p=job.location
+
+    -if current_user.admin || (current_user&.agency.id == job.agency_id)
+      =link_to "Edit", edit_job_path(job.id)
+      =link_to "Destroy", job_path(job.id), method: :destroy, data: {confirm: "Are you sure?"}

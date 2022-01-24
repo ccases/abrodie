@@ -10,4 +10,16 @@ class User < ApplicationRecord
   has_one :admin
 
   accepts_nested_attributes_for :applicant, :agency, :admin
+
+  before_save :create_profile
+
+  def create_profile
+    if self.applicant
+
+    elsif self.agency
+
+    elsif self.admin
+
+    end
+  end
 end

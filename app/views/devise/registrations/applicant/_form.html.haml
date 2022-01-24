@@ -1,0 +1,9 @@
+APPLICANT FORM HAML
+-# -debugger
+=fields_for :applicant do |af|
+  .field
+    =af.label :fname
+    =af.text_field :fname
+  .field
+    =af.label :lname
+    =af.text_field :lname
