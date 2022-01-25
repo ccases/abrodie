@@ -7,7 +7,9 @@ class JobsController < ApplicationController
 
   def create
     @job = Job.new(job_params)
-
+    if current_user.admin
+      @job.agency_id = params[:job][:agency_id]
+    end
     if @job.save
       redirect_to jobs_path, :flash => {:success => "Job added"}
     else
@@ -17,9 +19,11 @@ class JobsController < ApplicationController
 
   def new
     @job = Job.new
+    @categories = @job.categories.build
   end
 
   def edit
+    debugger
   end
 
   def update
@@ -47,7 +51,11 @@ class JobsController < ApplicationController
       :salary_hidden,
       :vacancies,
       :vacancies_hidden,
-      :employer
+      :employer,
+      categories_attributes: [
+        :name,
+        :description
+      ]
     )
   end
 

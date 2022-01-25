@@ -1,4 +1,7 @@
-%h1 Jobs#edit
-%p Find me in app/views/jobs/edit.html.haml
+%h1 Editing job
 
-=render 'form'
+= render 'form'
+
+= link_to 'Show', @job
+\|
+= link_to 'Back', jobs_path

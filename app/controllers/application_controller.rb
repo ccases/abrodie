@@ -13,9 +13,7 @@ class ApplicationController < ActionController::Base
   end
   def authenticate_admin_or_agency!
     if current_user.admin
-      return
     elsif current_user.agency
-      return
     else
       render status: :forbidden
     end
