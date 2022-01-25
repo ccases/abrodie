@@ -1,10 +1,13 @@
 class JobsController < ApplicationController
   before_action :authenticate_admin_or_agency!, only: [:edit, :create, :destroy]
-  before_action :set_job, only: [:edit, :update, :destroy]
+  before_action :set_job, only: [:edit, :update, :destroy, :show]
   def index
     @jobs = Job.all
   end
 
+  def show
+  end
+  
   def create
     @job = Job.new(job_params)
     if current_user.admin

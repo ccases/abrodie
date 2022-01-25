@@ -16,7 +16,7 @@
         %td= job.title
         %td= job.desc.truncate(40)
         %td= job.location
-        %td= link_to 'Show', job
+        %td= link_to 'Show', job_path(job.id)
         %td= link_to 'Edit', edit_job_path(job.id)
         %td= link_to 'Destroy', job, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
