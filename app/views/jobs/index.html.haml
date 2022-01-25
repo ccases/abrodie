@@ -14,7 +14,7 @@
     - @jobs.each do |job|
       %tr
         %td= job.title
-        %td= job.desc.truncate(40)
+        %td= job.desc.to_plain_text.truncate(40)
         %td= job.location
         %td= link_to 'Show', job_path(job.id)
         %td= link_to 'Edit', edit_job_path(job.id)
