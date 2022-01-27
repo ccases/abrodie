@@ -21,16 +21,15 @@ class MessagesController < ApplicationController
   end
 
   def new
+    @room = Room.find_by(name: params[:name])
+    @new_msg = @room.messages.build(user: current_user)
   end
 
   def create
-    @message = @chatroom.messages.create!(body: msg_params[:body], user: current_user)
-    # room = Room.find_by(name: @room_name)
-    # @message = @chatroom.messages.create!(body: msg_params[:body], user: current_user)
-    # debugger
-    # if @message.save
-    # else
-    # end
+    
+    room = Room.find(params[:room_name]) #room name lang name nyan pero ID talaga yan haha sus
+    @message = room.messages.create!(body: msg_params[:body], user: current_user)
+    
   end
 
   private

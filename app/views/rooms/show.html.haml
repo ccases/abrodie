@@ -1,5 +1,20 @@
 ROOMS SHOW HAML
 
-=@chatroom.name
+=turbo_stream_from @room
+
+=@room.name
+=link_to current_user.email, room_path("drafts_#{current_user.id}")
 -@users.each do |user|
   =link_to user.email, room_path(get_room_name(current_user, user))
+
+=render 'rooms/messages', room: @room, message: @message
+
+-# -@messages.each do |msg|
+-#   =msg.user.email
+-#   %br/
+-#   =msg.body
+-#   %br/
+
+-# =form_with model: [@room, @message], remote: true do |f|
+-#   =f.text_field :body
+-#   =f.submit "Send", data: {disable_with: false}

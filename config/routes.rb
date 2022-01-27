@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 
   resources :messages
 
-  resources :rooms, param: :name
+  resources :rooms, param: :name do
+    resources :messages
+  end
   devise_for :users, controllers: { registrations: "users/registrations" }
 
   devise_scope :user do

@@ -11,17 +11,18 @@ class RoomsController < ApplicationController
     # @rooms = current_user.rooms
     @rooms = Room.all
     @new_room = current_user.rooms.build
+
+
     @room = Room.find_by(name: params[:name]) || current_user.rooms.create!(name: params[:name])
     @messages = @room.messages.where.not(body: nil)
     @message = @room.messages.build(user: current_user)
   end
 
   def new
-    @room = current_user.rooms.build
+    @new_room = current_user.rooms.build
   end
 
   def create
-
   #   debugger
   #   current_user.rooms.create(room_params)
   #   redirect_to messages_path(37)
