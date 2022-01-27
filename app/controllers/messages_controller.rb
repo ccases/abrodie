@@ -24,7 +24,6 @@ class MessagesController < ApplicationController
   end
 
   def create
-    debugger
     @message = @chatroom.messages.create!(body: msg_params[:body], user: current_user)
     # room = Room.find_by(name: @room_name)
     # @message = @chatroom.messages.create!(body: msg_params[:body], user: current_user)

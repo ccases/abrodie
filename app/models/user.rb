@@ -14,5 +14,9 @@ class User < ApplicationRecord
 
   accepts_nested_attributes_for :applicant, :agency, :admin
 
+  after_create :create_drafts
 
+  def create_drafts
+    self.rooms.create!(name: "drafts_#{self.id}")
+  end
 end
