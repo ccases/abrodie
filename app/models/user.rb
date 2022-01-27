@@ -9,17 +9,10 @@ class User < ApplicationRecord
   has_one :agency, dependent: :destroy
   has_one :admin, dependent: :destroy
 
+  has_and_belongs_to_many :rooms
+  has_many :messages
+
   accepts_nested_attributes_for :applicant, :agency, :admin
 
-  before_save :create_profile
 
-  def create_profile
-    if self.applicant
-
-    elsif self.agency
-
-    elsif self.admin
-
-    end
-  end
 end

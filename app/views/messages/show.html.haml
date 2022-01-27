@@ -1,0 +1,15 @@
+
+=turbo_stream_from "room"
+=render 'rooms/room'
+
+= form_with(model: @room, remote: true, class: "d-flex" ) do |f|
+  = f.text_field :name, class: "form-control", autocomplete: 'off'
+  = f.submit data: { disable_with: false }
+
+-@users.each do |user|
+  =link_to user.email, messages_path(user.id)
+=@other_user.email
+%br/
+%div#messages
+  =render 'messages/convo', messages: @messages
+=render 'messages/msg_form', message: @message

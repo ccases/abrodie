@@ -1,0 +1,7 @@
+
+-messages.each do |msg|
+  %div{id: dom_id(msg)}
+    =msg.user.email 
+    %br/
+    =msg.body
+    %br/
