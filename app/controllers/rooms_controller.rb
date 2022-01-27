@@ -11,8 +11,7 @@ class RoomsController < ApplicationController
     # @rooms = current_user.rooms
     @rooms = Room.all
     @room = current_user.rooms.build
-
-    @chatroom = Room.find_by(name: @room_name) || current_user.rooms.create!(name: @room_name)
+    @chatroom = Room.find_by(name: params[:name]) || current_user.rooms.create!(name: params[:name])
     @messages = @chatroom.messages.where.not(body: nil)
     @message = @chatroom.messages.build(user: current_user)
   end
@@ -22,7 +21,6 @@ class RoomsController < ApplicationController
   end
 
   def create
-    debugger
 
   #   debugger
   #   current_user.rooms.create(room_params)

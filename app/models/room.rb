@@ -6,4 +6,6 @@ class Room < ApplicationRecord
   
   # after_create_commit {broadcast_append_to "rooms"}
   # broadcasts_to @rooms
+
+  
 end

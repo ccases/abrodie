@@ -1,1 +1,5 @@
 ROOMS SHOW HAML
+
+=@chatroom.name
+-@users.each do |user|
+  =link_to user.email, room_path(get_room_name(current_user, user))
