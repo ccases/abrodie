@@ -1,0 +1,8 @@
+APPLICANT FORM HAML
+= form.fields_for :applicant, resource.applicant do |af|
+  .field
+    = af.label :fname, "First name"
+    = af.text_field :fname
+  .field
+    = af.label :lname, "Last name"
+    = af.text_field :lname

@@ -1,0 +1,8 @@
+ADMIN FORM HAML
+= form.fields_for :admin, resource.admin do |af|
+  .field
+    = af.label :lname
+    = af.text_field :lname
+  .field
+    = af.label :fname
+    = af.text_field :fname

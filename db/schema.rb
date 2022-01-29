@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_21_065914) do
+ActiveRecord::Schema.define(version: 2022_01_27_063035) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -140,6 +140,16 @@ ActiveRecord::Schema.define(version: 2022_01_21_065914) do
     t.index ["agency_id"], name: "index_jobs_on_agency_id"
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "room_id", null: false
+    t.text "body"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["room_id"], name: "index_messages_on_room_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.integer "rating", default: 0
     t.text "body"
@@ -149,6 +159,19 @@ ActiveRecord::Schema.define(version: 2022_01_21_065914) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["agency_id"], name: "index_reviews_on_agency_id"
     t.index ["applicant_id"], name: "index_reviews_on_applicant_id"
+  end
+
+  create_table "rooms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "rooms_users", id: false, force: :cascade do |t|
+    t.integer "room_id", null: false
+    t.integer "user_id", null: false
+    t.index ["room_id", "user_id"], name: "index_rooms_users_on_room_id_and_user_id"
+    t.index ["user_id", "room_id"], name: "index_rooms_users_on_user_id_and_room_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -171,6 +194,8 @@ ActiveRecord::Schema.define(version: 2022_01_21_065914) do
   add_foreign_key "applications", "applicants"
   add_foreign_key "applications", "jobs"
   add_foreign_key "branches", "agencies"
+  add_foreign_key "messages", "rooms"
+  add_foreign_key "messages", "users"
   add_foreign_key "reviews", "agencies"
   add_foreign_key "reviews", "applicants"
 end

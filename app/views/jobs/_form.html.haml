@@ -1,0 +1,29 @@
+=form_for @job do |f|
+  - if @job.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@job.errors.count, "error")} prohibited this job from being saved:"
+      %ul
+        - @job.errors.full_messages.each do |msg|
+          %li= msg
+  -if current_user.admin
+    .field
+      =f.label :agency_id, "Agency ID but replace to agency name"
+      =f.text_field :agency_id
+  -elsif current_user.agency
+    =f.hidden_field :agency_id, value: current_user.agency.id
+  .field
+    =f.label :title, "Job title"
+    %br/
+    =f.text_field :title
+
+  .field
+    =f.label :desc, "Job description"
+    %br/
+    =f.rich_text_area :desc
+
+  =f.fields_for :categories do |af|
+    =af.label :name, "Category"
+    =af.text_field :name
+
+  .actions
+    = f.submit 'Save'

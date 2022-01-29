@@ -1,0 +1,8 @@
+Conversation
+
+%div{id: "message"}
+-messages.each do |msg|
+    =msg.user.email 
+    %br/
+    =msg.body
+    %br/

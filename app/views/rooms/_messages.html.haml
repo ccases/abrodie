@@ -1,0 +1,6 @@
+YOUR CONVO
+#messages
+  -# Expands to =render partial messages/message, collection: room.messages
+  =render room.messages.where.not(id: current_user.id)
+
+=render "messages/new", message: message, room: room
