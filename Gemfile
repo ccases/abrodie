@@ -5,7 +5,6 @@ ruby "2.7.4"
 
 gem "rails", "~> 7.0.1"
 gem "sprockets-rails"
-gem "sqlite3", "~> 1.4"
 gem "puma", "~> 5.0"
 gem "importmap-rails"
 gem "turbo-rails"
@@ -31,12 +30,14 @@ gem "image_processing", "~> 1.2"
 # Added custom
 gem "devise"
 gem "hamlit-rails"
+gem "aws-sdk-s3", require: false
 # gem 'bootstrap', '~> 5.1.3'
 gem 'materialize-sass', '~> 1.0.0'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem "sqlite3", "~> 1.4"
 end
 
 group :development do
@@ -52,8 +53,7 @@ group :development do
 end
 
 group :production do
-  # gem 'pg'
-  # gem "aws-sdk-s3", require: false
+  gem 'pg'
 end
 
 
