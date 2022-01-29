@@ -1,3 +1,14 @@
 -if current_user
+  =link_to "Messages", room_path("drafts_#{current_user.id}")
+  =link_to "Sign out", destroy_user_session_path, data: { "turbo-method": :delete }
+-else
+  =link_to "Sign in", new_user_session_path
+  -# =link_to "Sign up as an applicant", new_applicant_path registrations_path(user_type: "applicant")
+  -# =link_to "Sign up your agency", new_agency_path
+  =link_to "Sign up as an applicant", new_user_path(user_type: "applicant")
+  =link_to "Sign up your agency", new_user_path(user_type: "agency")
+=link_to "Jobs", jobs_path
+
+-if current_user
   -if current_user.admin
     Welcome, admin! 
