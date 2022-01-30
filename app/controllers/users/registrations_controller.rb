@@ -23,10 +23,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def configure_sign_up_params
     if params[:user][:applicant_attributes]
       devise_parameter_sanitizer.permit(:sign_up,
-        keys: [applicant_attributes: [:fname, :lname]])
+        keys: [:avatar, applicant_attributes: [:fname, :lname]])
     elsif params[:user][:agency_attributes]
-      devise_parameter_sanitizer.permit(:sign_up,
-        keys: [agency_attributes: [:name, :kind]])
+      devise_parameter_sanitizer.permit(:sign_up, 
+        keys: [:avatar, agency_attributes: [:name, :kind]])
     end
   end
 
