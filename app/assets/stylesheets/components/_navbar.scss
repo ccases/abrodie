@@ -1,0 +1,30 @@
+.nav-wrapper {
+    width: 100vw;
+    background-color: #FFFFFF;
+    padding: 0.5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Raleway', sans-serif;
+    .black-logo {
+        height: 5em;
+    }
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        padding-right: 3%;
+        font-size: 17px;
+        a {
+            color: #000000;
+            border-bottom: 4px solid #4540DB;
+        }
+        .login {
+            background-color: #4540DB;
+            color: #FFFFFF;
+            border-radius: 3px;
+            padding-left: 4px;
+            padding-right: 4px;
+            padding-top: 4px;
+        }
+    }
+}

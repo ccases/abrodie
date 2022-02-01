@@ -2,12 +2,21 @@
   =link_to "Messages", room_path("drafts_#{current_user.id}")
   =link_to "Sign out", destroy_user_session_path, data: { "turbo-method": :delete }
 -else
-  =link_to "Sign in", new_user_session_path
-  -# =link_to "Sign up as an applicant", new_applicant_path registrations_path(user_type: "applicant")
-  -# =link_to "Sign up your agency", new_agency_path
-  =link_to "Sign up as an applicant", new_user_path(user_type: "applicant")
-  =link_to "Sign up your agency", new_user_path(user_type: "agency")
-=link_to "Jobs", jobs_path
+
+  .nav-wrapper
+    %a.brand-logo{:href => '/'}
+      =image_tag 'abrodie-logo-black.png', class:'black-logo'
+    .nav-links
+      =link_to "EMPLOYEE", new_user_path(user_type: "applicant"), class:'employee'
+      - 3.times do
+        ="&nbsp".html_safe
+      =link_to "EMPLOYER", new_user_path(user_type: "agency"), class:'employer'
+      - 3.times do
+        ="&nbsp".html_safe
+      =link_to "JOBS", jobs_path, class:'jobs'
+      - 4.times do
+        ="&nbsp".html_safe
+      =link_to "LOG IN", new_user_session_path, class:'login'
 
 -if current_user
   -if current_user.admin
