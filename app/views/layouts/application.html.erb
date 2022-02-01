@@ -8,6 +8,15 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+      .message{
+        text-align: left;
+      }
+      .message[data-user-id="37"]{
+        text-align: right;
+      }
+    </style>
   </head>
 
   <body>

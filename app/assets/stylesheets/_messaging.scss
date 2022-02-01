@@ -1,0 +1,58 @@
+.rooms-show-container{
+  box-sizing: border-box;
+  display:flex;
+  flex-flow: row;
+  width: clamp(300px, 100%, 1200px);
+  padding: 30px;
+  height: 100%;
+
+  .sidebar{
+    width: 370px;
+    padding: 20px;
+    display: flex;
+    flex-flow: column;
+
+    .searchbar{
+      display:flex;
+      flex-flow:row;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .user-container{
+      display:flex;
+      flex-flow: column;
+      overflow-y: auto;
+    }
+  }
+
+  .convo-container{
+    display:grid;
+    grid-template-rows: max-content 1fr max-content;
+    grid-template-areas: 
+      "header"
+      "convo"
+      "form";
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+
+    .convo-header{
+      grid-area: header;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .convo{
+      grid-area: convo;
+      border: thin solid black;
+      overflow-y: auto;
+      max-height: 100vh;
+
+      .sender{
+      }
+      .receiver{
+      }
+    }
+  }
+}

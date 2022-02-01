@@ -1,13 +1,21 @@
-ROOMS SHOW HAML
 
 =turbo_stream_from @room
 
-=@room.name
-=link_to current_user.email, room_path("drafts_#{current_user.id}")
--@users.each do |user|
-  =link_to user.email, room_path(get_room_name(current_user, user)), class:"waves-effect waves-light btn"
-
-=render 'rooms/messages', room: @room, message: @message
+.rooms-show-container
+  .sidebar
+    .searchbar
+      %input{type: "text", class: "chat-search", placeholder: "Persons, Groups, Chats"}
+      %i{class:"material-icons"}="search"
+    .user-container
+      =link_to "#{get_user_name(current_user)} (Drafts)", room_path("drafts_#{current_user.id}")
+      -@users.each do |user|
+        =link_to get_user_name(user), room_path(get_room_name(current_user, user))
+  .convo-container
+    .convo-header
+      =get_user_name(@other_user)
+      -if @other_user == current_user
+        (Drafts)
+    =render 'rooms/messages', room: @room, message: @message
 
 -# -@messages.each do |msg|
 -#   =msg.user.email

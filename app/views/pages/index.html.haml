@@ -7,6 +7,7 @@
   -if current_user.avatar.attached?
     =image_tag current_user.avatar
   =link_to "Messages", room_path("drafts_#{current_user.id}")
+  =link_to "Edit account", edit_user_registration_path(current_user)
   =link_to "Sign out", destroy_user_session_path, data: { "turbo-method": :delete }
 -else
   =link_to "Sign in", new_user_session_path

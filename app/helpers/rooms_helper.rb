@@ -8,4 +8,16 @@ module RoomsHelper
       "room_#{b}_#{a}"
     end
   end
+
+  def get_user_name(user)
+    if user&.applicant
+      "#{user.applicant.fname} #{user.applicant.lname}"
+    elsif user&.admin
+      "#{user.admin.fname} #{user.admin.lname}"
+    elsif user&.agency
+      user.agency.name # CHANGE TO THIS PAG MAY VALIDATIONS NA @other_user&.name 
+    else
+      nil
+    end
+  end
 end
