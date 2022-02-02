@@ -18,7 +18,13 @@
  @import "materialize";
  @import "./messaging";
 
+*{
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+}
 body, html{
+
    min-width: 100vw;
    min-height: 100vh;
 }

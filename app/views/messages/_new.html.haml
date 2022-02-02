@@ -1,3 +1,6 @@
 =form_with model: [room, message], remote: true, data:{ controller: "reset-form", action: "turbo:submit-end->reset-form#reset"} do |f|
   =f.text_field :body, data: {reset_form_target: "field"}
-  =f.submit "Send", data: {disable_with: false}
+  
+  =f.button :submit, data: {disable_with: false} do
+    %i.material-icons send
+    

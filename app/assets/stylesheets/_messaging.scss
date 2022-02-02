@@ -4,7 +4,7 @@
   flex-flow: row;
   width: clamp(300px, 100%, 1200px);
   padding: 30px;
-  height: 100%;
+  max-height: 100vh;
 
   .sidebar{
     width: 370px;
@@ -27,16 +27,18 @@
   }
 
   .convo-container{
-    display:grid;
-    grid-template-rows: max-content 1fr max-content;
-    grid-template-areas: 
-      "header"
-      "convo"
-      "form";
+    display:flex;
+    flex-flow: column;
+    // display:grid;
+    // grid-template-rows: 1fr 500px 1fr;
+    // grid-template-areas: 
+    //   "header"
+    //   "convo"
+    //   "form";
     padding: 20px;
     width: 100%;
     height: 100%;
-
+    overflow-y: auto;
     .convo-header{
       grid-area: header;
       font-size: 24px;
@@ -44,6 +46,10 @@
     }
 
     #messages{
+      // grid-area: convo;
+      // flex-grow: 1;
+      max-height: 500px;
+      overflow-y: auto;
       .message{
         .img-div{
           width: 50px;
@@ -57,6 +63,33 @@
           .msg-div{
             line-height: 170%;
           }
+        }
+      }
+    }
+
+    .msg-form{
+      // grid-area: form;
+      margin: 10px 0;
+      padding: 0 20px;
+      background: #E9E9E9;
+      border-radius: 50px;
+      form{
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+        #message_body {
+          margin: 0;
+          padding: 0;
+
+          border-bottom: none;
+          outline: none;
+          box-shadow: none;
+        }
+        #message_submit{
+          vertical-align: middle;
+          border:none;
+          padding: 5px;
+          border-radius: 50%;
         }
       }
     }
