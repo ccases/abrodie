@@ -2,14 +2,7 @@
   -# Expands to =render partial messages/message, collection: room.messages
     #messages above is IMPORTANT btw for real time chat to work
     apparently turbo looks for the id also
-  =render partial: "messages/message", collection: room.messages.where.not(body: nil), locals: {user: current_user}
-  -# -room.messages.where.not(body: nil).each do |msg|
-  -#   -if msg.user.id == current_user.id
-  -#     -msg_class="sender"
-  -#   -else
-  -#     -msg_class="receiver"
-  -#   =render partial: "messages/message", object: msg, locals: {msg_class: msg_class}
-  -# =render room.messages.where.not(body: nil), locals: {this_user: @current_user}
+  =render partial: "messages/message", collection: room.messages.where.not(body: nil)
 
 .msg-form
   =render "messages/new", message: message, room: room

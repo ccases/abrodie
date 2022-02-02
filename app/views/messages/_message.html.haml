@@ -1,18 +1,14 @@
 %div{id: dom_id(message), class: "message", data: {user_id: message.user.id}}
-
-  -if message.user.avatar.attached?
-    -avatar = message.user.avatar
-    -if avatar.representable?
-      =image_tag avatar.representation(resize_to_limit: [50, 50])
+  %div{class: "img-div"}
+    -if message.user.avatar.attached?
+      =image_tag message.user.avatar.variant(:msg)
     -else
-      -# =image_tag avatar.variant( resize_to_limit: [50, 50])
-      =image_tag avatar
-  -else
-    =image_tag("no_avatar", size: "50")
-  =message.user.email
-  %br/
-  =message.body
-  %br/
+      =image_tag("no_avatar", size: "50")
+  .time-msg-div
+    .time-div
+      =message.created_at.strftime("%I:%M %p")
+    .msg-div
+      =message.body
   -# %div{class: "#{msg_class}"}
   -#   .avatar
       -# -avatar = message.user.avatar

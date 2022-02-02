@@ -12,9 +12,37 @@
     <style>
       .message{
         text-align: left;
+        display:flex;
+        flex-flow: row;
+        margin: 5px 50px 5px 0;
       }
-      .message[data-user-id="37"]{
+      .message .time-msg-div{
+        display:flex;
+        flex-flow: column;
+        justify-content: flex-start;
+      }
+      .message .time-msg-div .msg-div{
+        background: #8CEEC187;
+        border-radius: 0 20px 20px 20px;
+      }
+      .message[data-user-id="<%= current_user&.id %>"]{
         text-align: right;
+        display:flex;
+        flex-flow: row-reverse;
+        margin: 5px 0 5px 50px;
+      }
+      .message[data-user-id="<%= current_user&.id %>"] 
+      .img-div{
+        display:none;
+      }
+      .message[data-user-id="<%= current_user&.id %>"] .time-msg-div{
+        display:flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+      }
+      .message[data-user-id="<%= current_user&.id %>"] .time-msg-div .msg-div{
+        border-radius: 20px 0 20px 20px;
+        background: #0000001A;
       }
     </style>
   </head>
