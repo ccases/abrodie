@@ -1,10 +1,12 @@
 .login-btn {
-    position: absolute;
+    
     width: 441px;
     height: 37px;
     left: 869px;
     top: 522px;
-    
+    align-self: center;
+    justify-self: start;
+    grid-area: form;
     background: #4540DB;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
     border-radius: 4px;
@@ -21,30 +23,27 @@
     color: #FFFFFF;
     }
     
-    .title {
-    position: absolute;
+.title {
     width: 375px;
     height: 41px;
-    left: 869px;
-    top: 294px;
-    
+    align-self: center;
+    justify-self: start;
     font-family: 'Poppins', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
     line-height: 41px;
-    /* identical to box height, or 205% */
-    
-    
     color: #000000;
-    }
+    grid-area: form;
+}
     
-    .username-login {
-    position: absolute;
+.username-login {
+    grid-area: form;
+    align-self: center;
+    justify-self: start;
+    margin: auto;
     width: 441px;
     height: 60.52px;
-    left: 869px;
-    top: 347px;
     border: 2px solid #4540DB;
     box-sizing: border-box;
     border-radius: 4px;
@@ -55,13 +54,15 @@
         }
     }
     
-    .password-login {
-    position: absolute;
+.password-login {
+    grid-area: form;
+    align-self: center;
+    justify-self: start;
     width: 441px;
     height: 60.52px;
     left: 869px;
     top: 450px;
-        
+    margin: auto;
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 300;
@@ -80,14 +81,11 @@
     }
     
 .hero {
-position: absolute;
-width: 521px;
-height: 73px;
-left: 251px;
-top: 314px;
-
+align-self: start;
+justify-self: end;
 font-family: 'Raleway', sans-serif;
 font-style: normal;
+width: 521px;
 font-weight: 900;
 font-size: 60px;
 line-height: 60px;
@@ -95,9 +93,18 @@ line-height: 60px;
 
 
 color: #4540DB;
+grid-area: hero;
 }
     
-    
+.main-container-login{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+        "Nav Nav"
+        "hero form";               
+}           
+
 #user_email {
     border-bottom: none;
     outline: none;
@@ -108,4 +115,14 @@ color: #4540DB;
     border-bottom: none;
     outline: none;
     box-shadow: none;
+}
+
+.new_user {
+    grid-area: form;
+    align-self: start;
+    justify-self: start;
+}
+
+#slogan {
+    margin: 0;
 }
