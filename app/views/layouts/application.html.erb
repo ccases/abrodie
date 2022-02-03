@@ -11,11 +11,14 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-
   <body>
-  <div class="main-content">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p> 
-    <%= yield %>
+    <%= render 'pages/navbar'%>
+    <div class="main-content">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </div>
+    <%= render "pages/footer" %>
+
   </body>
 </html>
