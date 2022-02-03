@@ -3,7 +3,7 @@
     -if message.user.avatar.attached?
       =image_tag message.user.avatar.variant(:msg)
     -else
-      =image_tag("no_avatar", size: "50")
+      =image_tag("no_avatar.png", size: "50")
   .time-msg-div
     .time-div
       =message.created_at.strftime("%I:%M %p")
