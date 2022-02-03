@@ -99,7 +99,7 @@ grid-area: hero;
 .main-container-login{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: .5fr 1fr;
     grid-template-areas: 
         "Nav Nav"
         "hero form";               
