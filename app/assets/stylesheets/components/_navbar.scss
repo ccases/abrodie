@@ -20,6 +20,10 @@
             border-bottom: 4px solid #4540DB;
             font-weight: 800;
         }
+        a:active {
+            border-bottom: 4px solid #8d6cee;
+            align-self: flex-start;
+        }
         .login {
             background-color: #4540DB;
             color: #FFFFFF;
