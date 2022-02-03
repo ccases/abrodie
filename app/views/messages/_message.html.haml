@@ -3,19 +3,9 @@
     -if message.user.avatar.attached?
       =image_tag message.user.avatar.variant(:msg)
     -else
-      =image_tag("no_avatar", size: "50")
+      -# =image_tag("no_avatar", size: "50")
   .time-msg-div
     .time-div
       =message.created_at.strftime("%I:%M %p")
     .msg-div
       =message.body
-  -# %div{class: "#{msg_class}"}
-  -#   .avatar
-      -# -avatar = message.user.avatar
-      -# -if !avatar.attached?
-      -#   =image_tag("no_avatar", size: "50")
-      -# -else
-        -# -if avatar.representable?
-        -#   =image_tag avatar.representation(resize_to_limit: [50, 50])
-        -# -else
-        -#   =image_tag avatar.variant( resize_to_limit: [65, 65])
