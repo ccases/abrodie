@@ -6,10 +6,32 @@
     .searchbar
       %input{type: "text", class: "chat-search", placeholder: "Persons, Groups, Chats"}
       %i{class:"material-icons"}="search"
-    .user-container
-      =link_to "#{get_user_name(current_user)} (Drafts)", room_path("drafts_#{current_user.id}")
+    .users-container
+      %div{class: "user-container#{active?(current_user)}"}
+        .img
+          -if current_user.avatar.attached?
+            =image_tag current_user.avatar.variant(:sidebar_icon)
+          -else
+            =image_tag("no_avatar.png", size: "72")
+        .name
+          =link_to "#{get_user_name(current_user)} (Drafts)", room_path("drafts_#{current_user.id}")
+        .time
+          -room = Room.find_by(name: "drafts_#{current_user.id}")
+          -if room&.messages.first
+            =room.messages.last.created_at.strftime("%I:%M %p")
       -@users.each do |user|
-        =link_to get_user_name(user), room_path(get_room_name(current_user, user))
+        %div{class: "user-container#{active?(current_user, user)}"}
+          .img
+            -if user.avatar.attached?
+              =image_tag user.avatar.variant(:sidebar_icon)
+            -else
+              =image_tag("no_avatar.png", size: "72")
+          .name
+            =link_to get_user_name(user), room_path(get_room_name(current_user, user))
+          .time
+            -room = Room.find_by(name: get_room_name(current_user, user))
+            -if room&.messages.first
+              =room.messages.last.created_at.strftime("%I:%M %p")
   .convo-container
     .convo-header
       =get_user_name(@other_user)

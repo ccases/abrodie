@@ -20,4 +20,17 @@ module RoomsHelper
       nil
     end
   end
+
+  def active?(user1, user2=nil, params_name = params[:name])
+    if user2.nil?
+      if params_name == "drafts_#{user1.id}"
+        return " active"
+      else
+        return ""
+      end
+    end
+    if params_name == get_room_name(user1, user2)
+      " active"
+    end
+  end
 end

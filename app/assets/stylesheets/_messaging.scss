@@ -7,7 +7,7 @@
   max-height: 100vh;
 
   .sidebar{
-    width: 370px;
+    width: 400px;
     padding: 20px;
     display: flex;
     flex-flow: column;
@@ -19,10 +19,48 @@
       align-items: center;
     }
 
-    .user-container{
+    .users-container{
       display:flex;
       flex-flow: column;
       overflow-y: auto;
+
+      .user-container{
+        display: grid;
+        grid-template-columns: 72px 3fr 1fr;
+        grid-template-areas: "img name time";
+        column-gap: 5px;
+        padding: 8px 16px;
+        height: 82px;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 16px;
+
+        .img{
+          grid-area: img;
+          height: 72px;
+          width:72px;
+          border-radius: 50%;
+          overflow:hidden;
+          margin-right: 5px;
+        }
+        .name{
+          grid-area: name;
+          font-weight: 700;
+          font-size: 18px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          justify-self: start;
+        }
+        .time{
+          grid-area: time;
+          font-weight: 400;
+          font-size: 14px;
+        }
+      }
+      .active{
+        background: #8CEEC187;
+      }
     }
   }
 
