@@ -26,11 +26,10 @@ class JobsController < ApplicationController
   end
 
   def edit
-    debugger
   end
 
   def update
-    if @job.update(@job.id, job_params)
+    if @job.update(job_params)
       redirect_to jobs_path, :flash => {:success => "Job updated"}
     else
       render :action => "edit", :flash => {:error => "Saving unsuccessful"}
