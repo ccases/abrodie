@@ -3,7 +3,11 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!, only: %i[ authenticate_admin! authenticate_agency! authenticate_applicant! authenticate_admin_or_agency!]
   
   def default_url_options
-    { locale: I18n.locale }
+    if Rails.env.production?
+      {:host => "myproduction.com"}
+    else 
+      {:host => "localhost", :port => "3000"}
+    end
   end
 
   def authenticate_admin!
