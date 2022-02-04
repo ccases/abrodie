@@ -37,13 +37,16 @@
     <% end %>
 
     <div class="field">
-      <%= f.label :avatar %><br />
-      <%= f.file_field :avatar %> <br />
+      <%= f.label :avatar %> <br />
+        <label class="login-btn">
+          Upload new image
+          <%= f.file_field :avatar, :class => 'avatar-signup'%> <br />
+        </label>
     </div>
   </div> 
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up", :class => 'login-btn'  %>
   </div>
   <%= render "devise/shared/links" %>
 <% end %>

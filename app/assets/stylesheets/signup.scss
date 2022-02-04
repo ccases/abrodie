@@ -129,7 +129,7 @@
         }
 }
 
-#user_avatar{
+.avatar-signup{
     width: 441px;
     height: 37px;
     left: 869px;
@@ -151,4 +151,8 @@
     text-transform: uppercase;
     
     color: #FFFFFF;
+}
+
+input[type="file"] {
+    display: none;
 }
