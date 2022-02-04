@@ -1,13 +1,14 @@
 .rooms-show-container{
+  margin: auto;
   box-sizing: border-box;
   display:flex;
   flex-flow: row;
-  width: clamp(300px, 100%, 1200px);
+  width: clamp(300px, 100%, 1500px);
   padding: 30px;
   max-height: 100vh;
 
   .sidebar{
-    width: 400px;
+    width: min-content;
     padding: 20px;
     display: flex;
     flex-flow: column;
@@ -23,18 +24,20 @@
       display:flex;
       flex-flow: column;
       overflow-y: auto;
+      width: 370px;
 
       .user-container{
         display: grid;
         grid-template-columns: 72px 3fr 1fr;
         grid-template-areas: "img name time";
         column-gap: 5px;
-        padding: 8px 16px;
+        margin: 8px 0;
+        padding: 0 10px;
         height: 82px;
         width: 100%;
-        justify-content: space-between;
-        align-items: center;
+        place-items:center;
         border-radius: 16px;
+        color: black;
 
         .img{
           grid-area: img;
@@ -45,17 +48,28 @@
           margin-right: 5px;
         }
         .name{
+          width: 100%;
+
           grid-area: name;
           font-weight: 700;
           font-size: 18px;
+
           overflow: hidden;
+          white-space:nowrap;
           text-overflow: ellipsis;
+          color: inherit;
+
           justify-self: start;
         }
         .time{
           grid-area: time;
           font-weight: 400;
           font-size: 14px;
+
+          overflow: hidden;
+          white-space:nowrap;
+          text-overflow: ellipsis;
+          color: inherit;
         }
       }
       .active{
@@ -65,18 +79,21 @@
   }
 
   .convo-container{
-    display:flex;
-    flex-flow: column;
-    // display:grid;
-    // grid-template-rows: 1fr 500px 1fr;
-    // grid-template-areas: 
-    //   "header"
-    //   "convo"
-    //   "form";
+    // display:flex;
+    // flex-flow: column;
+
+    display: grid;
+    // grid-template-rows: 200px minmax(1fr) 200px;
+    
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+      "header"
+      "convo"
+      "form";
     padding: 20px;
     width: 100%;
-    height: 100%;
     overflow-y: auto;
+
     .convo-header{
       grid-area: header;
       font-size: 24px;
@@ -86,7 +103,6 @@
     #messages{
       // grid-area: convo;
       // flex-grow: 1;
-      max-height: 500px;
       overflow-y: auto;
       .message{
         .img-div{
