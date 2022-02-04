@@ -156,3 +156,48 @@
 input[type="file"] {
     display: none;
 }
+
+#user_agency_attributes_name{
+    border-bottom: none;
+    outline: none;
+    box-shadow: none;
+}
+
+#user_agency_attributes_kind{
+    border-bottom: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.agency-name{
+    grid-area: form;
+    align-self: center;
+    justify-self: start;
+    margin: auto;
+    width: 441px;
+    height: 60.52px;
+    border: 2px solid #4540DB;
+    box-sizing: border-box;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+        label {
+            color: #4540DB;
+        }
+}
+.agency-kind {
+    grid-area: form;
+    align-self: center;
+    justify-self: start;
+    margin: auto;
+    width: 441px;
+    height: 60.52px;
+    border: 2px solid #4540DB;
+    box-sizing: border-box;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+        label {
+            color: #4540DB;
+        }
+}
