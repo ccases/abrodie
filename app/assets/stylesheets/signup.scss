@@ -1,0 +1,78 @@
+.main-container-signup {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: .075fr 1fr;
+        grid-template-areas: 
+            "Nav Nav"
+            "hero form";                    
+}
+
+.email-signup{
+    grid-area: form;
+    align-self: center;
+    justify-self: start;
+    margin: auto;
+    width: 441px;
+    height: 60.52px;
+    border: 2px solid #4540DB;
+    box-sizing: border-box;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+        label {
+            color: #4540DB;
+        }
+    }
+    
+.password-signup {
+    grid-area: form;
+    align-self: center;
+    justify-self: start;
+    width: 441px;
+    height: 60.52px;
+    left: 869px;
+    top: 450px;
+    margin: auto;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 20px;
+        /* or 125% */
+        
+    text-transform: uppercase;
+        
+    border: 2px solid #4540DB;
+    box-sizing: border-box;
+    border-radius: 4px;
+    label {
+        color: #4540DB;
+        }
+}
+
+.password-confirm{
+    grid-area: form;
+    align-self: center;
+    justify-self: start;
+    width: 441px;
+    height: 60.52px;
+    left: 869px;
+    top: 450px;
+    margin: auto;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 20px;
+        /* or 125% */
+        
+    text-transform: uppercase;
+        
+    border: 2px solid #4540DB;
+    box-sizing: border-box;
+    border-radius: 4px;
+    label {
+        color: #4540DB;
+        }
+}
+    
