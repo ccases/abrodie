@@ -14,17 +14,26 @@
  *= require_self
  */
 
+
 //  @import "bootstrap"
  @import "materialize";
+ @import "./components/*"
  @import "./messaging";
+ @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Devanagari:wght@300;400;600&family=Montserrat:ital,wght@0,600;1,700&family=Poppins&family=Raleway:wght@800&display=swap');
+ @import "./login-page.scss";
 
 *{
    box-sizing: border-box;
    padding: 0;
    margin: 0;
 }
-body, html{
 
-   min-width: 100vw;
-   min-height: 100vh;
+body{
+    display:grid;
+    grid: 
+        "header" auto
+        "main-content" minmax(0, 1fr)
+        "footer" auto;
+    min-height: 100vh;
+    width: 100%;
 }

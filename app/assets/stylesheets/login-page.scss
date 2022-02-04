@@ -1,0 +1,128 @@
+.login-btn {
+    
+    width: 441px;
+    height: 37px;
+    left: 869px;
+    top: 522px;
+    align-self: center;
+    justify-self: start;
+    grid-area: form;
+    background: #4540DB;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    /* or 125% */
+    
+    text-align: center;
+    text-transform: uppercase;
+    
+    color: #FFFFFF;
+    }
+    
+.title {
+    width: 375px;
+    height: 41px;
+    align-self: center;
+    justify-self: start;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 41px;
+    color: #000000;
+    grid-area: form;
+}
+    
+.username-login {
+    grid-area: form;
+    align-self: center;
+    justify-self: start;
+    margin: auto;
+    width: 441px;
+    height: 60.52px;
+    border: 2px solid #4540DB;
+    box-sizing: border-box;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+        label {
+            color: #4540DB;
+        }
+    }
+    
+.password-login {
+    grid-area: form;
+    align-self: center;
+    justify-self: start;
+    width: 441px;
+    height: 60.52px;
+    left: 869px;
+    top: 450px;
+    margin: auto;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 20px;
+        /* or 125% */
+        
+    text-transform: uppercase;
+        
+    border: 2px solid #4540DB;
+    box-sizing: border-box;
+    border-radius: 4px;
+    label {
+        color: #4540DB;
+        }
+    }
+    
+.hero {
+align-self: start;
+justify-self: end;
+font-family: 'Raleway', sans-serif;
+font-style: normal;
+width: 521px;
+font-weight: 900;
+font-size: 60px;
+line-height: 60px;
+/* or 68% */
+
+
+color: #4540DB;
+grid-area: hero;
+}
+    
+.main-container-login{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: .5fr 1fr;
+    grid-template-areas: 
+        "Nav Nav"
+        "hero form";               
+}           
+
+#user_email {
+    border-bottom: none;
+    outline: none;
+    box-shadow: none;
+}
+    
+#user_password {
+    border-bottom: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.new_user {
+    grid-area: form;
+    align-self: start;
+    justify-self: start;
+}
+
+#slogan {
+    margin: 0;
+}

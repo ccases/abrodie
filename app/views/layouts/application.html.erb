@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Devanagari:wght@300;400;600&family=Montserrat:ital,wght@0,600;1,700&family=Poppins&family=Raleway:wght@800&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -46,8 +48,14 @@
       }
     </style>
   </head>
-
   <body>
-    <%= yield %>
+    <%= render 'pages/navbar'%>
+    <div class="main-content">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </div>
+    <%= render "pages/footer" %>
+
   </body>
 </html>
