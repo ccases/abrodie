@@ -12,7 +12,7 @@
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
-
+  <br />
   <div class="password-signup">
     <%= f.label :password %>
     <% if @minimum_password_length %>
@@ -20,12 +20,12 @@
     <% end %><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
-
+  <br />
   <div class="password-confirm">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
-  
+  <br />
   <div class="subform">
   
     <% if @applicant %>
@@ -38,13 +38,13 @@
 
     <div class="field">
       <%= f.label :avatar %> <br />
-        <label class="login-btn">
+        <label class="signup-btn">
           Upload new image
           <%= f.file_field :avatar, :class => 'avatar-signup'%> <br />
         </label>
     </div>
   </div> 
-
+  <br />
   <div class="actions">
     <%= f.submit "Sign up", :class => 'login-btn'  %>
   </div>

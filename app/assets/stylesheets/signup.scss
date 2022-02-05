@@ -185,6 +185,7 @@ input[type="file"] {
             color: #4540DB;
         }
 }
+
 .agency-kind {
     grid-area: form;
     align-self: center;
@@ -200,4 +201,26 @@ input[type="file"] {
         label {
             color: #4540DB;
         }
+}
+
+.signup-btn {
+    width: 100%;
+    height: 37px;
+    left: 869px;
+    top: 522px;
+    align-self: center;
+    justify-self: start;
+    grid-area: form;
+    background: #4540DB;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 10px;
+    /* or 125% */
+    padding: 4.5px;
+    text-align: center;
+    text-transform: uppercase;
+    
+    color: #FFFFFF;
 }
