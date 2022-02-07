@@ -1,27 +1,32 @@
-<h2>Sign up</h2>
+<div class="main-container-signup">
 
+  <div class="hero">
+      <p id="slogan">Ready ka na mag Abroad? </p>
+  </div>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
+  <div class="title">
+    <p>Sign Up</p>
+  </div>
+  <div class="email-signup">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
-
-  <div class="field">
+  <br />
+  <div class="password-signup">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
-
-  <div class="field">
+  <br />
+  <div class="password-confirm">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
-  
-  <%# <div class="subform"> %>
+  <br />
+  <div class="subform">
   
     <% if @applicant %>
       <%=render "devise/registrations/applicant/form", form: f%>
@@ -31,15 +36,20 @@
       <%=render "devise/registrations/admin/form", form: f%>
     <% end %>
 
-  <div class="field">
-    <%= f.label :avatar %><br />
-    <%= f.file_field :avatar %> <br />
-  </div>
-  <%# </div> %>
-
+    <div class="field">
+      <%= f.label :avatar %> <br />
+        <label class="signup-btn">
+          Upload new image
+          <%= f.file_field :avatar, :class => 'avatar-signup'%> <br />
+        </label>
+    </div>
+  </div> 
+  <br />
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up", :class => 'login-btn'  %>
   </div>
+  <%= render "devise/shared/links" %>
 <% end %>
 
-<%= render "devise/shared/links" %>
+
+</div>
