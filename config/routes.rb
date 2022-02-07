@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'users/index'
+  get 'users/show'
+  get '/', to: "pages#index", as: "pages"
+  get '/dashboard', to: "pages#dashboard", as: "dashboard"
 
   resources :messages
 
@@ -12,6 +16,7 @@ Rails.application.routes.draw do
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :jobs
+  resources :pages
   # Defines the root path route ("/")
   root to: "pages#index"
 end
