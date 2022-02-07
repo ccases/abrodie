@@ -13,7 +13,7 @@ class MessagesController < ApplicationController
     # @rooms = current_user.rooms
     @rooms = Room.all
     @room = Room.new
-    @other_user = User.find(params[:id])
+    
 
     @chatroom = Room.find_by(name: @room_name) || Room.create(name: @room_name)
     @messages = @chatroom.messages.where.not(body: nil)
@@ -30,6 +30,15 @@ class MessagesController < ApplicationController
     room = Room.find(params[:room_name]) #room name lang name nyan pero ID talaga yan haha sus
     @message = room.messages.create!(body: msg_params[:body], user: current_user)
     
+    # @message = room.messages.build(body: msg_params[:body], user: current_user)
+    # respond_to do |format|
+    #   if @message.save
+    #     format.html { redirect_to @message, notice: "message was successfully created." }
+    #     format.turbo_stream
+    #   else
+    #     format.html { render :new, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   private

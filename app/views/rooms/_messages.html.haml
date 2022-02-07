@@ -1,6 +1,8 @@
-YOUR CONVO
 #messages
   -# Expands to =render partial messages/message, collection: room.messages
-  =render room.messages.where.not(id: current_user.id)
+    #messages above is IMPORTANT btw for real time chat to work
+    apparently turbo looks for the id also
+  =render partial: "messages/message", collection: room.messages.where.not(body: nil)
 
-=render "messages/new", message: message, room: room
+.msg-form
+  =render "messages/new", message: message, room: room

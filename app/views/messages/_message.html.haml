@@ -1,5 +1,11 @@
-%div{id: dom_id(message)}
-  =message.user.email
-  %br/
-  =message.body
-  %br/
+%div{id: dom_id(message), class: "message", data: {user_id: message.user.id}}
+  %div{class: "img-div"}
+    -if message.user.avatar.attached?
+      =image_tag message.user.avatar.variant(:msg)
+    -else
+      =image_tag("no_avatar.png", size: "50")
+  .time-msg-div
+    .time-div
+      =message.created_at.strftime("%I:%M %p")
+    .msg-div
+      =message.body

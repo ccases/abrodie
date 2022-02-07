@@ -1,13 +1,46 @@
-ROOMS SHOW HAML
 
 =turbo_stream_from @room
 
-=@room.name
-=link_to current_user.email, room_path("drafts_#{current_user.id}")
--@users.each do |user|
-  =link_to user.email, room_path(get_room_name(current_user, user)), class:"waves-effect waves-light btn"
-
-=render 'rooms/messages', room: @room, message: @message
+.rooms-show-container
+  .sidebar
+    .searchbar
+      %input{type: "text", class: "chat-search", placeholder: "Persons, Groups, Chats"}
+      %i{class:"material-icons"}="search"
+    .users-container
+      =link_to room_path("drafts_#{current_user.id}") do
+        %div{class: "user-container#{active?(current_user)}"}
+          .img
+            -if current_user.avatar.attached?
+              =image_tag current_user.avatar.variant(:sidebar_icon)
+            -else
+              =image_tag("no_avatar.png", size: "72")
+          .name
+            ="#{get_user_name(current_user)} (Drafts)"
+          .time
+            -room = Room.find_by(name: "drafts_#{current_user.id}")
+            -if room&.messages
+              =room.messages.last.created_at.strftime("%I:%M %p")
+      -@users.each do |user|
+        =link_to room_path(get_room_name(current_user, user)) do
+          %div{class: "user-container#{active?(current_user, user)}"}
+            .img
+              -if user.avatar.attached?
+                =image_tag user.avatar.variant(:sidebar_icon)
+              -else
+                =image_tag("no_avatar.png", size: "72")
+            .name
+              =get_user_name(user)
+            .time
+              -room = Room.find_by(name: get_room_name(current_user, user))
+              -if room&.messages
+                -if room.messages&.first
+                  =room.messages.last.created_at.strftime("%I:%M %p")
+  .convo-container
+    .convo-header
+      =get_user_name(@other_user)
+      -if @other_user == current_user
+        (Drafts)
+    =render 'rooms/messages', room: @room, message: @message
 
 -# -@messages.each do |msg|
 -#   =msg.user.email

@@ -31,6 +31,19 @@
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 
+  <% if @applicant %> 
+    <%=render "devise/registrations/applicant/form", form: f%>
+  <% elsif @agency %>
+    <%=render "devise/registrations/agency/form", form: f%>
+  <% elsif @admin %>
+    <%=render "devise/registrations/admin/form", form: f%>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :avatar %><br />
+    <%= f.file_field :avatar %> <br />
+  </div>
+
   <div class="actions">
     <%= f.submit "Update" %>
   </div>

@@ -2,6 +2,14 @@ class ApplicationController < ActionController::Base
   # devise_group :user, contains: [:applicant, :agency, :admin]
   before_action :authenticate_user!, only: %i[ authenticate_admin! authenticate_agency! authenticate_applicant! authenticate_admin_or_agency!]
   
+  def default_url_options
+    if Rails.env.production?
+      {:host => "myproduction.com"}
+    else 
+      {:host => "localhost", :port => "3000"}
+    end
+  end
+
   def authenticate_admin!
     render status: :forbidden if current_user.admin.nil?
   end
