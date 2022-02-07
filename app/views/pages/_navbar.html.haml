@@ -1,11 +1,36 @@
 %head
   %link{:href => "https://fonts.googleapis.com", :rel => "preconnect"}/
   %link{:crossorigin => "", :href => "https://fonts.gstatic.com", :rel => "preconnect"}/
-  %link{:href => "https://fonts.googleapis.com/css2?family=Raleway:wght@200;800&display=swap", :rel => "stylesheet"}/
+  %link{:href => "https://fonts.googleapis.com/css2?family=Mulish:wght@300&family=Poppins&family=Raleway:wght@500&family=Roboto&display=swap", :rel => "stylesheet"}/
 
 -if current_user
-  =link_to "Messages", room_path("drafts_#{current_user.id}")
-  =link_to "Sign out", destroy_user_session_path, data: { "turbo-method": :delete }
+  -if current_user.applicant
+    .sidenav-wrapper
+      .sidenav-logo
+        =image_tag 'abrodie-logo-white.png', class:'white-logo'
+      .sidenav-links
+        #guidelines
+          %ion-icon{:name => 'list-box'}
+          =link_to "Guidelines"
+        #profile
+          %ion-icon{:name => 'person'}
+          =link_to "Your Profile"
+        #jobs
+          %ion-icon{:name => 'briefcase'}
+          =link_to "Jobs & Agencies"
+        #apps
+          %ion-icon{:name => 'clipboard'}
+          =link_to "Applications"
+        #messages
+          %ion-icon{:name => 'mail-open'}
+          =link_to "Messages", room_path("drafts_#{current_user.id}")
+        #sign-out
+          %ion-icon{:name => 'arrow-round-forward'}
+          =link_to "Sign out", destroy_user_session_path, data: { "turbo-method": :delete }
+
+  -elsif current_user.admin
+    Welcome, admin!
+    
 -else
   .nav-wrapper
     %a.brand-logo{:href => '/'}
@@ -20,8 +45,4 @@
       =link_to "JOBS", jobs_path, class:'jobs'
       - 4.times do
         ="&nbsp".html_safe
-      =link_to "LOG IN", new_user_session_path, class:'login'
-
--if current_user
-  -if current_user.admin
-    Welcome, admin! 
+      =link_to "LOG IN", new_user_session_path, class:'login' 
