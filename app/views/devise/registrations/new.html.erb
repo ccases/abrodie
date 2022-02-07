@@ -36,12 +36,10 @@
       <%=render "devise/registrations/admin/form", form: f%>
     <% end %>
 
-    <div class="field">
+  
+    <div class="field-file">
       <%= f.label :avatar %> <br />
-        <label class="signup-btn">
-          Upload new image
-          <%= f.file_field :avatar, :class => 'avatar-signup'%> <br />
-        </label>
+      <%= f.file_field :avatar, :class => 'submit-btn' %> <br />
     </div>
   </div> 
   <br />

@@ -152,10 +152,6 @@
     color: #FFFFFF;
 }
 
-input[type="file"] {
-    display: none;
-}
-
 #user_agency_attributes_name{
     border-bottom: none;
     outline: none;
@@ -222,8 +218,17 @@ input[type="file"] {
     text-transform: uppercase;
     
     color: #FFFFFF;
+    // input[type="file"] {
+    //     display: none;
+    // }
 }
 
 .signup-btn:hover {
     cursor: pointer;
+}
+
+.submit-btn {
+    button {
+        background: #4540DB;
+    }
 }
