@@ -138,7 +138,6 @@
     justify-self: start;
     grid-area: form;
     background: #4540DB;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
     border-radius: 4px;
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
@@ -223,4 +222,8 @@ input[type="file"] {
     text-transform: uppercase;
     
     color: #FFFFFF;
+}
+
+.signup-btn:hover {
+    cursor: pointer;
 }
