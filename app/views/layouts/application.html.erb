@@ -10,6 +10,43 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Devanagari:wght@300;400;600&family=Montserrat:ital,wght@0,600;1,700&family=Poppins&family=Raleway:wght@800&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+      .message{
+        text-align: left;
+        display:flex;
+        flex-flow: row;
+        margin: 5px 50px 5px 0;
+      }
+      .message .time-msg-div{
+        display:flex;
+        flex-flow: column;
+        justify-content: flex-start;
+      }
+      .message .time-msg-div .msg-div{
+        padding: 10px 15px;
+        min-width: min-content;
+        background: #8CEEC187;
+        border-radius: 0 20px 20px 20px;
+      }
+      .message[data-user-id="<%= current_user&.id %>"]{
+        text-align: right;
+        flex-flow: row-reverse;
+        margin: 5px 0 5px 50px;
+      }
+      .message[data-user-id="<%= current_user&.id %>"] 
+      .img-div{
+        display:none;
+      }
+      .message[data-user-id="<%= current_user&.id %>"] .time-msg-div{
+        justify-content: flex-end;
+        align-items: flex-end;
+      }
+      .message[data-user-id="<%= current_user&.id %>"] .time-msg-div .msg-div{
+        border-radius: 20px 20px 0 20px;
+        background: #0000001A;
+      }
+    </style>
   </head>
   <body>
     <%= render 'pages/navbar'%>

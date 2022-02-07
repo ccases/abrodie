@@ -17,6 +17,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
   end
 
+  def edit
+    if resource&.applicant
+      @applicant = resource.build_applicant
+    elsif resource&.agency
+      @agency = resource.build_agency
+    elsif resource&.admin
+      @admin = resource.build_admin
+    end
+  end
   protected
 
   # If you have extra params to permit, append them to the sanitizer.
@@ -32,7 +41,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [:attribute])
+    if params[:user][:applicant_attributes]
+      devise_parameter_sanitizer.permit(:sign_up,
+        keys: [:avatar, applicant_attributes: [:fname, :lname]])
+    elsif params[:user][:agency_attributes]
+      devise_parameter_sanitizer.permit(:sign_up, 
+        keys: [:avatar, agency_attributes: [:name, :kind]])
+    end
   end
 
   def agency?

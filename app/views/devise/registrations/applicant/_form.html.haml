@@ -1,8 +1,8 @@
-APPLICANT FORM HAML
 = form.fields_for :applicant, resource.applicant do |af|
-  .field
+  .fname-signup
     = af.label :fname, "First name"
     = af.text_field :fname
-  .field
+  %br/ 
+  .lname-signup
     = af.label :lname, "Last name"
     = af.text_field :lname

@@ -2,4 +2,6 @@
 =form_with model: message, remote: true do |f|
   =f.hidden_field :other_user_id, value: params[:id]
   =f.text_field :body
-  =f.submit data: {disable_with: false}, value: "Send"
+  =f.submit data: {disable_with: false} do
+    %i.material-icons
+      send
