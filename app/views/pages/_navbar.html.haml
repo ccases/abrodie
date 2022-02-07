@@ -4,6 +4,21 @@
   %link{:href => "https://fonts.googleapis.com/css2?family=Mulish:wght@300&family=Poppins&family=Raleway:wght@500&family=Roboto&display=swap", :rel => "stylesheet"}/
 
 -if current_user
+  .nav-wrapper
+    %a.brand-logo{:href => '/'}
+      =image_tag 'abrodie-logo-black.png', class:'black-logo'
+    .nav-links
+      =link_to "EMPLOYEE", new_user_path(user_type: "applicant"), class:'employee'
+      - 3.times do
+        ="&nbsp".html_safe
+      =link_to "EMPLOYER", new_user_path(user_type: "agency"), class:'employer'
+      - 3.times do
+        ="&nbsp".html_safe
+      =link_to "JOBS", jobs_path, class:'jobs'
+      - 4.times do
+        ="&nbsp".html_safe
+      =link_to "LOG IN", new_user_session_path, class:'login'
+-elsif current_user.applicant?
   .sidenav-wrapper
     .sidenav-logo
       =image_tag 'abrodie-logo-white.png', class:'white-logo'
@@ -26,21 +41,6 @@
       #sign-out
         %ion-icon{:name => 'arrow-round-forward'}
         =link_to "Sign out", destroy_user_session_path, data: { "turbo-method": :delete }
--else
-  .nav-wrapper
-    %a.brand-logo{:href => '/'}
-      =image_tag 'abrodie-logo-black.png', class:'black-logo'
-    .nav-links
-      =link_to "EMPLOYEE", new_user_path(user_type: "applicant"), class:'employee'
-      - 3.times do
-        ="&nbsp".html_safe
-      =link_to "EMPLOYER", new_user_path(user_type: "agency"), class:'employer'
-      - 3.times do
-        ="&nbsp".html_safe
-      =link_to "JOBS", jobs_path, class:'jobs'
-      - 4.times do
-        ="&nbsp".html_safe
-      =link_to "LOG IN", new_user_session_path, class:'login'
 
 -if current_user
   -if current_user.admin
