@@ -53,8 +53,21 @@
         justify-content: center;
         color: #FFFFFF;
         font-family: 'Mulish', sans-serif;
+        padding: 10px;
+        padding-top: 30%;
         a {
             color: #FFFFFF;
+            padding: 15%;
+            padding-left: 5%;
+            font-size: 1rem;
+        }
+        #guidelines, #profile, #jobs, #apps, #messages {
+            padding-top: 7%;
+        }
+        #sign-out {
+            border-top: 1px solid rgba(211, 211, 211, 0.685);
+            margin-top: 20%;
+            padding-top: 30%;
         }
     }
 }
