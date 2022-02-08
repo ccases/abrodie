@@ -5,12 +5,16 @@ Rails.application.routes.draw do
   get 'users/show'
   get '/', to: "pages#index", as: "pages"
   get '/dashboard', to: "pages#dashboard", as: "dashboard"
+  get '/guidelines', to: "pages#dashboard", as: "guidelines"
+
 
 
   # post 'applicant/:id', to: 'applicants#update'
 
   resources :messages
 
+  resources :messages
+  resources :agencies
   resources :rooms, param: :name do
     resources :messages
   end
