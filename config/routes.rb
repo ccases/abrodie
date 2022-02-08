@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'reviews/new'
+  get 'reviews/edit'
   get 'users/index'
   get 'users/show'
   get '/', to: "pages#index", as: "pages"
@@ -6,6 +8,10 @@ Rails.application.routes.draw do
   get '/guidelines', to: "pages#dashboard", as: "guidelines"
 
 
+
+  # post 'applicant/:id', to: 'applicants#update'
+
+  resources :messages
 
   resources :messages
   resources :agencies
@@ -19,7 +25,14 @@ Rails.application.routes.draw do
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :jobs
-  resources :pages
+  resources :users
+
+  resources :applicants
+  resources :agencies do
+    resources :reviews
+  end
+  resources :admins
+
   # Defines the root path route ("/")
   root to: "pages#index"
 end

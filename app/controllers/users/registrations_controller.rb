@@ -19,11 +19,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def edit
     if resource&.applicant
-      @applicant = resource.build_applicant
+      @applicant = resource.applicant
     elsif resource&.agency
-      @agency = resource.build_agency
+      @agency = resource.agency
     elsif resource&.admin
-      @admin = resource.build_admin
+      @admin = resource.admin
     end
   end
   protected
@@ -43,10 +43,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def configure_account_update_params
     if params[:user][:applicant_attributes]
       devise_parameter_sanitizer.permit(:sign_up,
-        keys: [:avatar, applicant_attributes: [:fname, :lname]])
+        keys: [:avatar, applicant_attributes: [:fname, :lname, :resume_file]])
     elsif params[:user][:agency_attributes]
       devise_parameter_sanitizer.permit(:sign_up, 
         keys: [:avatar, agency_attributes: [:name, :kind]])
+    elsif params[:user][:admin_attributes]
+      devise_parameter_sanitizer.permit(:sign_up, 
+        keys: [:avatar, admin_attributes: [:fname, :lname]])
     end
   end
 

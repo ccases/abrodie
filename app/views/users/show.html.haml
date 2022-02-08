@@ -1,0 +1,7 @@
+.users-show-container
+  -if @applicant
+    =render 'users/applicant'
+  -elsif @agency
+    =render 'users/agency'
+  -elsif @admin
+    =render 'users/admin'

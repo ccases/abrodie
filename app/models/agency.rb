@@ -3,4 +3,6 @@ class Agency < ApplicationRecord
   has_many :applicants, through: :reviews
   has_many :branches
   has_many :jobs
+  has_many :reviews
+
 end

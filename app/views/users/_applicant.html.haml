@@ -1,0 +1,41 @@
+
+.header-msg
+  Recruiters can see your amazing profile when you submit an application. Make sure your details are up-to-data and complete.
+.profile-details-container
+  .profile-card
+    .image-container
+      -if @user.avatar.attached?
+        =image_tag @user.avatar
+      -else
+        =image_tag 'no_avatar.png'
+    .details-container
+      .name
+        ="#{@applicant.fname} #{@applicant.lname}"
+      .details
+        .email
+          %p Email
+          %p="#{@applicant.user.email}"
+          %br/
+        .birthday
+          %p Date of birth
+          %p="#{@applicant.birth_date.strftime("%B %d, %Y")}"
+          %br/
+
+  .user-other-container
+    %h5 Resume
+    %p *read Guidelines page for tips in writing your Resume
+
+    .resume-download-link
+      -if @applicant.resume_file.attached?
+        = link_to rails_blob_path( @applicant.resume_file, disposition: 'attachment') do
+          %i.material-icons file_download
+          ="#{@applicant.resume_file.filename}"
+        -# = link_to "Download #{@applicant.resume_file.filename}", rails_blob_path( @applicant.resume_file, disposition: 'attachment')
+      -else
+        No resume uploaded yet.
+    -if current_user&.id.to_s == params[:id]
+      =form_with model: @applicant, id: "resume-form" do |f|
+        =f.file_field :resume_file
+        =f.submit "UPLOAD NEW FILE"
+
+    
