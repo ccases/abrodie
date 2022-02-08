@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   
   def default_url_options
     if Rails.env.production?
-      {:host => "myproduction.com"}
+      {:host => ENV.fetch("WEBSITE_URL")}
     else 
       {:host => "localhost", :port => "3000"}
     end

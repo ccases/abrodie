@@ -8,6 +8,6 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    redirect_to '/index' unless current_user
+    redirect_to root_path unless current_user
   end
 end
