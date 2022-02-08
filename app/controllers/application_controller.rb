@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   
   def default_url_options
     if Rails.env.production?
-      {:host => "myproduction.com"}
+      {:host => ENV.fetch("WEBSITE_URL")}
     else 
       {:host => "localhost", :port => "3000"}
     end
@@ -30,7 +30,13 @@ class ApplicationController < ActionController::Base
   protected
 
   def after_sign_in_path_for(resource)
-    root_path
+    if current_user.applicant
+    guidelines_path
+    elsif current_user.admin
+    agencies_path
+    elsif current_user.agency
+    user_path(current_user)
+    end
   end
 
   def after_sign_out_path_for(resource)

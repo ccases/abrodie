@@ -1,0 +1,45 @@
+.header-msg
+  Applicants can view your agency profile. Please make sure your details are up-to-date and complete.
+.profile-details-container
+  .profile-card
+    .image-container
+      -if @user.avatar.attached?
+        =image_tag @user.avatar
+      -else
+        =image_tag 'no_avatar.png'
+    .details-container
+      .name
+        ="#{@agency.name}"
+      .details
+        .email
+          %p Email
+          %p="#{@agency.user.email}"
+          %br/
+        .birthday
+          %p Joined Abrodie on
+          %p="#{@agency.created_at.strftime("%B %d, %Y")}"
+          %br/
+  .user-other-container
+    #bio
+      %h5 BIO
+      %p=@agency.bio
+    #agency-contacts
+
+      %h5 MESSAGE
+      -if current_user
+        -if  current_user.id.to_s == params[:id]
+          =link_to "Drafts", room_path("drafts_#{current_user.id}")
+        -else
+          =link_to "Go to messages", room_path(get_room_name(current_user, @agency.user))
+      -else
+        Sign up or log in.
+      %h5 PHONE
+      %p=@agency.contact_no
+    
+    #agency-reviews
+      %h5="RATING: #{@rating.round(1)}/5"
+      -# -if current_user&.applicant
+      =link_to "Write a review", new_agency_review_path(@agency)
+
+.reviews-container
+  =render partial: 'reviews/review', collection: @reviews

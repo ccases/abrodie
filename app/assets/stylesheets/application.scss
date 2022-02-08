@@ -29,12 +29,12 @@
    margin: 0;
 }
 
-body{
-    display:grid;
-    grid: 
-        "header" auto
-        "main-content" minmax(0, 1fr)
-        "footer" auto;
-    min-height: 100vh;
-    width: 100%;
-}
+// body{
+//     display:grid;
+//     grid: 
+//         "header" auto
+//         "main-content" minmax(0, 1fr)
+//         "footer" auto;
+//     min-height: 100vh;
+//     width: 100%;
+// }
