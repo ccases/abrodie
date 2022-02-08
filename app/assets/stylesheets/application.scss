@@ -38,3 +38,29 @@
 //     min-height: 100vh;
 //     width: 100%;
 // }
+
+.main-wrapper {
+   display: grid;
+   grid-template-columns:
+      auto 1fr ;
+   grid-template-rows: 
+      auto 1fr auto;
+   grid-template-areas: 
+      'sidenav topnav'
+      'sidenav content'
+      'sidenav footer';
+   column-gap: 20px; 
+   .sidenav-wrapper {
+      grid-area: sidenav;
+   }
+   .topnav-wrapper {
+      grid-area: topnav;
+   }
+   .main-content {
+      grid-area: content;
+      overflow-y: scroll;
+   }
+   .footer-wrapper {
+      grid-area: footer;
+   }
+}

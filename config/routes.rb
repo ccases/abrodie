@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'agencies/index'
   get 'reviews/new'
   get 'reviews/edit'
   get 'users/index'
