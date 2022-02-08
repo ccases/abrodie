@@ -10,4 +10,7 @@ class PagesController < ApplicationController
   def dashboard
     redirect_to '/' unless current_user
   end
+
+  def guidelines
+  end
 end
