@@ -1,12 +1,9 @@
--if current_user
-  =link_to "Messages", room_path("drafts_#{current_user.id}")
-  =link_to "Sign out", destroy_user_session_path, data: { "turbo-method": :delete }
--else
-  .footer-wrapper
-    =image_tag 'abrodie-logo-black.png', class:'black-logo'
-    .footer-links
-      =image_tag 'footer.png', class:'footer'
+-# -if current_user
+-#   .footer-wrapper
+-#     =image_tag 'abrodie-logo-black.png', class:'black-logo'
+-#     .footer-links
+-#       =image_tag 'footer.png', class:'footer'
 
--if current_user
-  -if current_user.admin
-    Welcome, admin! 
+-# -if current_user
+-#   -if current_user.admin
+-#     Welcome, admin! 

@@ -33,3 +33,41 @@
         }
     }
 }
+
+.sidenav-wrapper {
+    flex-direction: column;
+    align-items: center;
+    width: 15%;
+    height: 100vh;
+    padding: 20px;
+    background: #4540DB;
+    border-radius: 0 15px 15px 0;
+    overflow: hidden;
+    .white-logo {
+        width: 13em;   
+    }
+    .sidenav-links {
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        justify-content: center;
+        color: #FFFFFF;
+        font-family: 'Mulish', sans-serif;
+        padding: 10px;
+        padding-top: 30%;
+        a {
+            color: #FFFFFF;
+            padding: 15%;
+            padding-left: 5%;
+            font-size: 1rem;
+        }
+        #guidelines, #profile, #jobs, #apps, #messages {
+            padding-top: 7%;
+        }
+        #sign-out {
+            border-top: 1px solid rgba(211, 211, 211, 0.685);
+            margin-top: 20%;
+            padding-top: 30%;
+        }
+    }
+}
