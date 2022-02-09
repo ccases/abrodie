@@ -1,8 +1,19 @@
--if @agencies
-  =render partial: "admins/agency", collection: @agencies
--elsif @applicants
-  =render partial: "admins/applicant", collection: @applicants
--elsif @admins
-  =render partial: "admins/admin", collection: @admins
--elsif @users
-  =render partial: "admins/user", collection: @users
+.admins-container
+  -if @agencies
+    %h5 All Agencies
+    .agency-container.header
+      %p Agency
+      %p Status
+      %p Kind
+      %p Date Joined
+      %p Page
+    =render partial: "admins/agency", collection: @agencies
+  -elsif @applicants
+    All Applicants
+    =render partial: "admins/applicant", collection: @applicants
+  -elsif @admins
+    All Admins
+    =render partial: "admins/admin", collection: @admins
+  -elsif @users
+    All Users
+    =render partial: "admins/user", collection: @users

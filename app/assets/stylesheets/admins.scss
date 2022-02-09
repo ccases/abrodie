@@ -1,0 +1,59 @@
+
+.admins-container{
+  font-family: 'Mulish';
+  .agency-container{
+    padding: 10px 15px;
+    display:grid;
+    grid-template-columns: 1fr 120px 120px 120px 60px 60px;
+    border-bottom: 1px solid #DEDEDE;
+    align-items: center;
+    &:hover{
+      background-color: #3751FF33;
+    }
+    &.header{
+      pointer-events: none;
+      p{
+        color: #9FA2B4;
+      }
+    }
+    .container-wide{
+      display:flex;
+      flex-flow: row;
+      align-items:center;
+      img{
+        border-radius: 5px;
+      }
+      .name-container{
+        display:flex;
+        flex-flow: column;
+        justify-content: space-between;
+        padding-left: 20px;
+        .name{
+          font-size: 1.5em;
+        }
+        .ago{
+          font-size: 0.8em;
+          color: #9FA2B4;
+        }
+      }
+      
+    }
+    .status{
+      color: white;
+      .pending{
+        width: min-content;
+        background-color: #C5C7CD;
+        border-radius: 100px;
+        padding: 0.2em 0.6em;
+      }
+      .verified{
+        width: min-content;
+        background-color: #8CEEC1;
+        padding: 0.2em;
+        border-radius: 100px;
+        padding: 0.2em 0.6em;
+      }
+    }
+  }
+
+}
