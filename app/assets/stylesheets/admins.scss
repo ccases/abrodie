@@ -2,9 +2,15 @@
 .admins-container{
   font-family: 'Mulish';
   .agency-container{
-    padding: 10px 15px;
     display:grid;
     grid-template-columns: 1fr 120px 120px 120px 60px 60px;
+  }
+  .applicant-container{
+    display:grid;
+    grid-template-columns: 1fr 120px 60px 60px;
+  }
+  .agency-container, .applicant-container{
+    padding: 10px 15px;
     border-bottom: 1px solid #DEDEDE;
     align-items: center;
     &:hover{
@@ -58,5 +64,18 @@
       }
     }
   }
-
+  .applicants-container{
+    padding: 10px 15px;
+    border-bottom: 1px solid #DEDEDE;
+    align-items: center;
+    &:hover{
+      background-color: #3751FF0F;
+    }
+    &.header{
+      pointer-events: none;
+      p{
+        color: #9FA2B4;
+      }
+    }
+  }
 }

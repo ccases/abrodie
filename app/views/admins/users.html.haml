@@ -9,7 +9,11 @@
       %p Page
     =render partial: "admins/agency", collection: @agencies
   -elsif @applicants
-    All Applicants
+    %h5 All Applicants
+    .applicant-container.header
+      %p Agency
+      %p Date Joined
+      %p Page
     =render partial: "admins/applicant", collection: @applicants
   -elsif @admins
     All Admins
