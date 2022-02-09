@@ -1,8 +1,8 @@
 -if @agencies
-  =render partial: "agencies/agency", collection: @agencies
+  =render partial: "admins/agency", collection: @agencies
 -elsif @applicants
-  =render partial: "applicants/applicant", collection: @applicants
+  =render partial: "admins/applicant", collection: @applicants
 -elsif @admins
   =render partial: "admins/admin", collection: @admins
 -elsif @users
-  =render partial: "users/user", collection: @users
+  =render partial: "admins/user", collection: @users

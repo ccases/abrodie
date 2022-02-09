@@ -54,10 +54,10 @@
       .sidenav-links
         #profile
           %ion-icon{:name => 'person'}
-          =link_to "Agencies"
+          =link_to "Agencies", admin_users_path("agency")
         #jobs
           %ion-icon{:name => 'people'}
-          =link_to "Applicants"
+          =link_to "Applicants", admin_users_path("applicant")
         #sign-out
           %ion-icon{:name => 'arrow-round-forward'}
           =link_to "Sign out", destroy_user_session_path, data: { "turbo-method": :delete }
