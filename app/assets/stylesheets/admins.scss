@@ -64,18 +64,4 @@
       }
     }
   }
-  .applicants-container{
-    padding: 10px 15px;
-    border-bottom: 1px solid #DEDEDE;
-    align-items: center;
-    &:hover{
-      background-color: #3751FF0F;
-    }
-    &.header{
-      pointer-events: none;
-      p{
-        color: #9FA2B4;
-      }
-    }
-  }
 }

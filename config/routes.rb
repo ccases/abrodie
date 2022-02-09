@@ -29,7 +29,8 @@ Rails.application.routes.draw do
   resources :users
 
   get 'admins/:user_type', to: 'admins#users', as: 'admin_users'
-  # admin_users_path("agency" || "applicant" || "admin" || "user")
+  get 'admins/new/:user_type', to: 'users#new', as: 'new_admin_user'
+  # (new_)admin_users_path("agency" || "applicant" || "admin" || "user")
   resources :applicants
   resources :agencies do
     resources :reviews

@@ -1,4 +1,7 @@
 .admins-container
+  =link_to "Add a new agency", new_admin_user_path("agency")
+  =link_to "Add a new applciant", new_admin_user_path("applciant")
+  =link_to "Add a new admin", new_admin_user_path("admin")
   -if @agencies
     %h5 All Agencies
     .agency-container.header
