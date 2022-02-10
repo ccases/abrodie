@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   resources :messages
 
   resources :messages
-  resources :agencies
+  resources :agencies 
   resources :rooms, param: :name do
     resources :messages
   end
@@ -34,6 +34,7 @@ Rails.application.routes.draw do
   resources :applicants
   resources :agencies do
     resources :reviews
+    resources :jobs
   end
   resources :admins
 
