@@ -63,9 +63,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     params[:user_type] == "admin"
   end
 
-  def my_method (arg, arg2, arg3)
-    
-  end
   # The path used after sign up.
   def after_sign_up_path_for(resource)
     super(resource)
