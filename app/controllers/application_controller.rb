@@ -11,17 +11,17 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_admin!
-    render status: :forbidden if current_user.admin.nil?
+    render status: :forbidden if current_user&.admin.nil?
   end
   def authenticate_agency!
-    render status: :forbidden if current_user.agency.nil?
+    render status: :forbidden if current_user&.agency.nil?
   end
   def authenticate_applicant!
-    render status: :forbidden if current_user.applicant.nil?
+    render status: :forbidden if current_user&.applicant.nil?
   end
   def authenticate_admin_or_agency!
-    if current_user.admin
-    elsif current_user.agency
+    if current_user&.admin
+    elsif current_user&.agency
     else
       render status: :forbidden
     end
@@ -41,11 +41,11 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     if current_user.applicant
-    guidelines_path
+      guidelines_path
     elsif current_user.admin
-    agencies_path
+      admin_users_path("agency")
     elsif current_user.agency
-    user_path(current_user)
+      user_path(current_user)
     end
   end
 

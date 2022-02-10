@@ -1,14 +1,6 @@
 = link_to "Back to agency", user_path(@agency)
 = form_with model: [@agency, @review] do |f|
-  - if @review.errors.any?
-    #errorExplanation
-      %h2
-        = pluralize(@review.errors.count, "error")
-        prohibited
-        this post from being saved:
-      %ul
-        - @review.errors.full_messages.each do |msg|
-          %li= msg
+  = render 'layouts/error_messages', object: f.object
   .field
     = f.label :rating
     %br/
