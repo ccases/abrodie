@@ -49,17 +49,27 @@
     </style>
   </head>
   <body>
-    <% if user_signed_in? %>
-    <%= render 'pages/sidenav'%>
-    <%else%>
-    <%= render 'pages/navbar'%>
-    <% end %>
-    <div class="main-content">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      <%= yield %>
-    </div>
-    <%= render "pages/footer" %>
-    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
-  </body>
+  <% if user_signed_in? %>
+  <% classname = 'main-wrapper' %>
+  <% else %>
+  <% classname = 'body' %>
+  <% end %>
+      <div class= <%= classname %>>
+        <% if user_signed_in? %>
+        <%= render 'pages/sidenav'%>
+        <%= render 'pages/topnav', class: 'main-topnav'%>
+
+        <%else%>
+        <%= render 'pages/navbar'%>
+        <% end %>
+
+        <div class="main-content">
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+          <%= yield %>
+        </div>
+        <%= render "pages/footer" %>
+        <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+      </div>
+    </body>
 </html>

@@ -11,17 +11,17 @@
       .sidenav-links
         #guidelines
           %ion-icon{:name => 'list-box'}
-          =link_to "Guidelines"
+          =link_to "Guidelines", guidelines_path
         #profile
           %ion-icon{:name => 'person'}
           =link_to "Your Profile"
         #jobs
           %ion-icon{:name => 'briefcase'}
-          =link_to "Jobs & Agencies"
+          =link_to "Jobs & Agencies", jobsandagencies_path
         #apps
           %ion-icon{:name => 'clipboard'}
           =link_to "Applications"
-        #messages
+        #messages-sidenav
           %ion-icon{:name => 'mail-open'}
           =link_to "Messages", room_path("drafts_#{current_user.id}")
         #sign-out
@@ -41,7 +41,7 @@
         #apps
           %ion-icon{:name => 'clipboard'}
           =link_to "Applications"
-        #messages
+        #messages-sidenav
           %ion-icon{:name => 'mail-open'}
           =link_to "Messages", room_path("drafts_#{current_user.id}")
         #sign-out
@@ -54,10 +54,10 @@
       .sidenav-links
         #profile
           %ion-icon{:name => 'person'}
-          =link_to "Agencies"
+          =link_to "Agencies", admin_users_path("agency")
         #jobs
           %ion-icon{:name => 'people'}
-          =link_to "Applicants"
+          =link_to "Applicants", admin_users_path("applicant")
         #sign-out
           %ion-icon{:name => 'arrow-round-forward'}
           =link_to "Sign out", destroy_user_session_path, data: { "turbo-method": :delete }

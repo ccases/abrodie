@@ -1,0 +1,13 @@
+.review-container
+  .rating-container
+    -review.rating.times do
+      %i.material-icons star
+    -(5-review.rating).times do
+      %i.material-icons star_border
+    by
+    =review.applicant.fname
+  .body-container
+    =review.body
+  .time-ago-container
+    =time_ago_in_words(review.created_at)
+    

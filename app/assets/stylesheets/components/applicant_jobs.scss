@@ -1,0 +1,23 @@
+.jobsandagencies-searchbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    #search {
+        width: 50%;
+        position: relative;
+        span {
+            position: absolute;
+            display:inline-block;
+            padding-left:.5rem;
+            padding-top: .5rem;
+        }
+        input {
+            padding: .5rem;
+            padding-left: 2rem;
+            border-radius: 25px;
+            outline: none;
+            border-bottom: none;
+            box-shadow: none;
+        }
+    }
+}

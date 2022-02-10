@@ -5,7 +5,7 @@
   flex-flow: row;
   width: clamp(300px, 100%, 1500px);
   padding: 30px;
-  max-height: 100vh;
+  height: 100%;
 
   .sidebar{
     width: min-content;

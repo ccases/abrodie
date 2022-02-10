@@ -1,9 +1,5 @@
--# -if current_user
--#   .footer-wrapper
--#     =image_tag 'abrodie-logo-black.png', class:'black-logo'
--#     .footer-links
--#       =image_tag 'footer.png', class:'footer'
-
--# -if current_user
--#   -if current_user.admin
--#     Welcome, admin! 
+-if current_user
+  .footer-wrapper
+    =image_tag 'abrodie-logo-black.png', class:'black-logo'
+    .footer-links
+      =image_tag 'footer.png', class:'footer'

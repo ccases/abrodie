@@ -1,0 +1,35 @@
+.header-msg
+  This user is an administrator.
+
+.profile-details-container
+  .profile-card
+    .image-container
+      -if @user.avatar.attached?
+        =image_tag @user.avatar
+      -else
+        =image_tag 'no_avatar.png'
+    .details-container
+      .name
+        ="#{@admin.fname} #{@admin.lname}"
+      .details
+        .email
+          %p Email
+          %p="#{@admin.user.email}"
+          %br/
+        .birthday
+          %p Joined Abrodie on
+          %p="#{@admin.created_at.strftime("%B %d, %Y")}"
+          %br/
+
+  .user-other-container
+    #admin-contacts
+      %h5 MESSAGE
+      -if current_user
+        -if  current_user.id.to_s == params[:id]
+          =link_to "Drafts", room_path("drafts_#{current_user.id}")
+        -else
+          =link_to "Go to messages", room_path(get_room_name(current_user, @admin.user))
+      -else
+        Sign up or log in.
+      %h5 PHONE
+      %p=@admin.contact_no

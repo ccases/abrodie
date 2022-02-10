@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   
   def default_url_options
     if Rails.env.production?
-      {:host => "myproduction.com"}
+      {:host => ENV.fetch("WEBSITE_URL")}
     else 
       {:host => "localhost", :port => "3000"}
     end
@@ -24,6 +24,16 @@ class ApplicationController < ActionController::Base
     elsif current_user.agency
     else
       render status: :forbidden
+    end
+  end
+
+  def build_user_child
+    if @user.applicant
+      @applicant = @user.applicant.build
+    elsif @user.agency
+      @agency = @user.agency.build
+    elsif @user.admin
+      @admin = @user.admin.build
     end
   end
 
