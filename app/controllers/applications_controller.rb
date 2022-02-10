@@ -10,6 +10,7 @@ class ApplicationsController < ApplicationController
     end
 
     def show
+        
     end
 
     def create

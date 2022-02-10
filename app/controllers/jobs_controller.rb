@@ -8,7 +8,7 @@ class JobsController < ApplicationController
 
   def show
   end
-  
+
   def create
     @job = Job.new(job_params)
     if current_user.admin
@@ -76,6 +76,7 @@ class JobsController < ApplicationController
       :vacancies,
       :vacancies_hidden,
       :employer,
+      :agency_id,
       categories_attributes: [
         :name,
         :description
