@@ -1,6 +1,11 @@
 class ApplicationsController < ApplicationController
+    before_action :authenticate_user!
+    
     def index
+        @applications = current_user.applicant.applications
+
         @applications = Agency.find(params[:id]).applications
+
     end
 
     def show

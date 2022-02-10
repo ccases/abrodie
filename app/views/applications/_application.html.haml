@@ -1,0 +1,19 @@
+.application-container
+  .container-wide
+    -if application.job.agency.user.avatar.attached?
+      =image_tag application.job.agency.user.avatar.variant(:msg)
+    -else
+      =image_tag "no_avatar.png", size: "50"
+    .name-container
+      %p.name=application.job.title
+      %p.ago="Last updated: #{time_ago_in_words(application.job.updated_at)} ago"
+  
+  .agency
+    %p.name=application.job.agency.name
+
+  .date
+    =application.job.created_at.to_date
+  
+  .view
+    =link_to "View", application_path(application)
+
