@@ -27,7 +27,8 @@ Rails.application.routes.draw do
     get "/:user_type/sign_up", to: "users/registrations#new", as: "new_user"
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
+  resources :applications
+  
   resources :jobs do
     resources :applications
   end

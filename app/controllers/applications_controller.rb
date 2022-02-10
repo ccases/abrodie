@@ -1,5 +1,8 @@
 class ApplicationsController < ApplicationController
+    before_action :authenticate_user!
+    
     def index
+        @applications = current_user.applicant.applications
     end
 
     def show
