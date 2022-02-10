@@ -14,7 +14,7 @@
           =link_to "Guidelines", guidelines_path
         #profile
           %ion-icon{:name => 'person'}
-          =link_to "Your Profile"
+          =link_to "Your Profile", user_path(current_user)
         #jobs
           %ion-icon{:name => 'briefcase'}
           =link_to "Jobs & Agencies", jobsandagencies_path

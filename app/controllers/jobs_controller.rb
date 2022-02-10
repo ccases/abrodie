@@ -59,6 +59,8 @@ class JobsController < ApplicationController
       respond_to do |format|
         flash[:notice] = 'Please enter a job keyword'
         format.js { render partial: 'jobs/search_result'}
+      end
+    end
   end
 
   private
