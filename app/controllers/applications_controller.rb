@@ -2,10 +2,11 @@ class ApplicationsController < ApplicationController
     before_action :authenticate_user!
     
     def index
-        @applications = current_user.applicant.applications
-
-        @applications = Agency.find(params[:id]).applications
-
+        if current_user.applicant
+            @applications = current_user.applicant.applications
+        elsif current_user.agency
+            @applications = current_user.agency.applications
+        end
     end
 
     def show
