@@ -1,0 +1,11 @@
+<div class= 'jobsandagencies-wrapper'>
+    <div class='jobsandagencies-searchbar'
+        <%= form_tag search_job_path, remote: true, method: :get do %>
+            <span>
+                <ion-icon name="search"></ion-icon>
+            </span>
+            <%= text_field_tag :job, params[:job] %>
+            <%= submit_tag 'FIND JOB', class: 'btn', type: :submit %>
+            <% end %>
+    </div>
+</div>

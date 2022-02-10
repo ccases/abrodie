@@ -13,4 +13,7 @@ class PagesController < ApplicationController
 
   def guidelines
   end
+
+  def jobsandagencies
+  end
 end

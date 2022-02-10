@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get '/', to: "pages#index", as: "pages"
   get '/dashboard', to: "pages#dashboard", as: "dashboard"
   get '/guidelines', to: "pages#dashboard", as: "guidelines"
+  get '/applicant/jobsandagencies', to: "pages#applicant_jobs", as: "jobsandagencies"
+  get 'search_job' => 'jobs#job_search'
 
 
 
