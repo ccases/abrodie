@@ -3,6 +3,9 @@ class ApplicationsController < ApplicationController
     
     def index
         @applications = current_user.applicant.applications
+
+        @applications = Agency.find(params[:id]).applications
+
     end
 
     def show

@@ -14,13 +14,17 @@
           =link_to "Guidelines", guidelines_path
         #profile
           %ion-icon{:name => 'person'}
-          =link_to "Your Profile"
+          =link_to "Your Profile", user_path(current_user)
         #jobs
           %ion-icon{:name => 'briefcase'}
           =link_to "Jobs & Agencies", jobsandagencies_path
         #apps
           %ion-icon{:name => 'clipboard'}
+
           =link_to "Applications", applications_path
+
+          =link_to "Applications", job_applications_path
+
         #messages-sidenav
           %ion-icon{:name => 'mail-open'}
           =link_to "Messages", room_path("drafts_#{current_user.id}")
