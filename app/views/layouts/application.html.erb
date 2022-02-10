@@ -49,18 +49,18 @@
     </style>
   </head>
   <body>
-  <% if user_signed_in? %>
-  <% classname = 'main-wrapper' %>
-  <% else %>
-  <% classname = 'body' %>
-  <% end %>
+    <% if user_signed_in? %>
+      <% classname = 'main-wrapper' %>
+    <% else %>
+      <% classname = 'body' %>
+    <% end %>
       <div class= <%= classname %>>
         <% if user_signed_in? %>
-        <%= render 'pages/sidenav'%>
-        <%= render 'pages/topnav', class: 'main-topnav'%>
+          <%= render 'pages/sidenav'%>
+          <%= render 'pages/topnav', class: 'main-topnav'%>
 
         <%else%>
-        <%= render 'pages/navbar'%>
+          <%= render 'pages/navbar'%>
         <% end %>
 
         <div class="main-content">

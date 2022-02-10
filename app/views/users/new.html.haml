@@ -1,6 +1,7 @@
 NEW HTML HAML 
 
 =form_for @user do |f|
+  = render 'layouts/error_messages', object: f.object
   .field
     =f.label :email
     =f.email_field :email

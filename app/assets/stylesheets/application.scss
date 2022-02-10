@@ -65,3 +65,17 @@
       grid-area: footer;
    }
 }
+
+.notice {
+   background-color: #8CEEC1;
+}
+
+.alert, .notice {
+   justify-content: center;
+   align-items: center;
+   display: grid;
+   place-items: center;
+}
+.alert {
+   background-color: rgba(252, 125, 125, 0.883);
+}
