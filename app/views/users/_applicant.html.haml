@@ -18,7 +18,8 @@
           %br/
         .birthday
           %p Date of birth
-          %p="#{@applicant.birth_date.strftime("%B %d, %Y")}"
+          -if @applicant.birth_date
+            %p="#{@applicant.birth_date.strftime("%B %d, %Y")}"
           %br/
 
   .user-other-container
