@@ -1,6 +1,7 @@
 class JobsController < ApplicationController
   before_action :authenticate_admin_or_agency!, only: [:edit, :create, :destroy]
   before_action :set_job, only: [:edit, :update, :destroy, :show]
+
   def index
     @jobs = Job.all
   end
@@ -39,6 +40,25 @@ class JobsController < ApplicationController
   def destroy
     @job.destroy
     redirect_to jobs_path, :flash => {:success => "Job destroyed"}
+  end
+
+  def job_search
+    if params[:job].present?
+      @job = Job.new_search (params[:job])
+      if @job
+        respond_to do |format|
+          format.js { render partial: 'jobs/search_result'}
+        end
+      else
+        respond_to do |format|
+          flash[:notice] = 'Please enter another job keyword'
+          format.js { render partial: 'jobs/search_result'}
+        end
+      end
+    else
+      respond_to do |format|
+        flash[:notice] = 'Please enter a job keyword'
+        format.js { render partial: 'jobs/search_result'}
   end
 
   private
