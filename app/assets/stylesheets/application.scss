@@ -22,6 +22,7 @@
  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Devanagari:wght@300;400;600&family=Montserrat:ital,wght@0,600;1,700&family=Poppins&family=Raleway:wght@800&display=swap');
  @import "./login-page.scss";
  @import "./signup.scss";
+ @import "./guidelines.scss";
 
 *{
    box-sizing: border-box;
@@ -49,7 +50,8 @@
       'sidenav topnav'
       'sidenav content'
       'sidenav footer';
-   column-gap: 20px; 
+   column-gap: 20px;
+   max-height: 100vh; 
    .sidenav-wrapper {
       grid-area: sidenav;
    }
