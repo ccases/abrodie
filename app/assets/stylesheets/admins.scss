@@ -1,0 +1,67 @@
+
+.admins-container{
+  font-family: 'Mulish';
+  .agency-container{
+    display:grid;
+    grid-template-columns: 1fr 120px 120px 120px 60px 60px;
+  }
+  .applicant-container{
+    display:grid;
+    grid-template-columns: 1fr 120px 60px 60px;
+  }
+  .agency-container, .applicant-container{
+    padding: 10px 15px;
+    border-bottom: 1px solid #DEDEDE;
+    align-items: center;
+    &:hover{
+      background-color: #3751FF0F;
+    }
+    &.header{
+      pointer-events: none;
+      p{
+        color: #9FA2B4;
+      }
+    }
+    .container-wide{
+      display:flex;
+      flex-flow: row;
+      align-items:center;
+      img{
+        border-radius: 5px;
+      }
+      .name-container{
+        display:flex;
+        flex-flow: column;
+        justify-content: space-between;
+        padding-left: 20px;
+        .name{
+          font-weight: 600;
+          font-size: 1.5em;
+        }
+        .ago{
+          font-size: 0.8em;
+          color: #9FA2B4;
+        }
+      }
+      
+    }
+    .status{
+      color: white;
+      font-weight: 700;
+      font-size: 0.9em;
+      .pending{
+        width: min-content;
+        background-color: #C5C7CD;
+        border-radius: 100px;
+        padding: 0.2em 0.6em;
+      }
+      .verified{
+        width: min-content;
+        background-color: #8CEEC1;
+        padding: 0.2em;
+        border-radius: 100px;
+        padding: 0.2em 0.6em;
+      }
+    }
+  }
+}
