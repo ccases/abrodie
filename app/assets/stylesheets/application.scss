@@ -60,7 +60,7 @@
    }
    .main-content {
       grid-area: content;
-      overflow-y: scroll;
+      overflow-y: auto;
    }
    .footer-wrapper {
       grid-area: footer;

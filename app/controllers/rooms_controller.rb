@@ -33,7 +33,6 @@ class RoomsController < ApplicationController
   end
 
   def create
-  #   debugger
   #   current_user.rooms.create(room_params)
   #   redirect_to messages_path(37)
   end

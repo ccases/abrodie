@@ -1,0 +1,16 @@
+.applicant-container
+  .container-wide
+    -if applicant.user.avatar.attached?
+      =image_tag applicant.user.avatar.variant(:msg)
+    -else
+      =image_tag "no_avatar.png", size: "50"
+    .name-container
+      %p.name="#{applicant.fname} #{applicant.lname}"
+      %p.ago="Last updated: #{time_ago_in_words(applicant.updated_at)} ago"
+  .joined
+    =applicant.created_at.to_date
+  
+  .view
+    =link_to "View", user_path(applicant.user)
+
+  %i.material-icons more_vert

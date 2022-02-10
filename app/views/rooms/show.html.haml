@@ -19,7 +19,8 @@
           .time
             -room = Room.find_by(name: "drafts_#{current_user.id}")
             -if room&.messages
-              =room.messages.last.created_at.strftime("%I:%M %p")
+              -if room.messages&.first
+                =room.messages.last.created_at.strftime("%I:%M %p")
       -@users.each do |user|
         =link_to room_path(get_room_name(current_user, user)) do
           %div{class: "user-container#{active?(current_user, user)}"}

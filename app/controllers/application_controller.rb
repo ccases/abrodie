@@ -27,6 +27,16 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def build_user_child
+    if @user.applicant
+      @applicant = @user.applicant.build
+    elsif @user.agency
+      @agency = @user.agency.build
+    elsif @user.admin
+      @admin = @user.admin.build
+    end
+  end
+
   protected
 
   def after_sign_in_path_for(resource)
