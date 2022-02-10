@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Devanagari:wght@300;400;600&family=Montserrat:ital,wght@0,600;1,700&family=Poppins&family=Raleway:wght@800&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
       .message{
@@ -49,23 +50,26 @@
     </style>
   </head>
   <body>
-  <% if user_signed_in? %>
-  <% classname = 'main-wrapper' %>
-  <% else %>
-  <% classname = 'body' %>
-  <% end %>
+    <% if user_signed_in? %>
+      <% classname = 'main-wrapper' %>
+    <% else %>
+      <% classname = 'body' %>
+    <% end %>
       <div class= <%= classname %>>
         <% if user_signed_in? %>
-        <%= render 'pages/sidenav'%>
-        <%= render 'pages/topnav', class: 'main-topnav'%>
+          <%= render 'pages/sidenav'%>
+          <%= render 'pages/topnav', class: 'main-topnav'%>
 
         <%else%>
-        <%= render 'pages/navbar'%>
+          <%= render 'pages/navbar'%>
         <% end %>
 
         <div class="main-content">
-          <p class="notice"><%= notice %></p>
-          <p class="alert"><%= alert %></p>
+          <% flash.each do |message_type, message| %>
+            <%= javascript_tag "M.toast({html: '#{message}', classes: '#{message_type}'})" %>
+          <% end %> 
+          <%# <p class="notice"><%= notice %></p>
+          <%# <p class="alert"><%= alert %></p>
           <%= yield %>
         </div>
         <%= render "pages/footer" %>

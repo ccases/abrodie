@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
+  
+  root to: "pages#index"
+
   get 'agencies/index'
   get 'reviews/new'
   get 'reviews/edit'
   get 'users/index'
   get 'users/show'
-  get '/', to: "pages#index", as: "pages"
   get '/dashboard', to: "pages#dashboard", as: "dashboard"
   get '/guidelines', to: "pages#dashboard", as: "guidelines"
   get '/jobsandagencies', to: "pages#applicant_jobs", as: "jobsandagencies"
@@ -50,5 +52,4 @@ Rails.application.routes.draw do
   resources :admins
 
   # Defines the root path route ("/")
-  root to: "pages#index"
 end
