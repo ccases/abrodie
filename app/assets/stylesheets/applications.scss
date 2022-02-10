@@ -55,9 +55,16 @@ padding-left: 30px;
 padding-bottom: 10px;
 color: #252733;
 display:grid;
+padding: 10px 15px;
+}
+
+.title-headings{
+display:grid;
 grid-template-columns: 1fr 120px 120px 50px;
 padding: 10px 15px;
 border-bottom: 1px solid #DEDEDE;
+color:  #9FA2B4;
+font-family: Mulish;
 }
 
 .agency {
