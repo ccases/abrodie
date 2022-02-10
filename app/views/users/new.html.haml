@@ -1,20 +1,24 @@
 NEW HTML HAML 
 
 =form_for @user do |f|
-  =f.label :email
-  =f.email_field :email
-
-  =f.label :password
-  =f.password_field :password
-  
-  =f.label :password_confirmation
-  =f.password_field :password_confirmation
-
-  =f.file_field :avatar
+  .field
+    =f.label :email
+    =f.email_field :email
+  .field
+    =f.label :password
+    =f.password_field :password
+  .field
+    =f.label :password_confirmation
+    =f.password_field :password_confirmation
+  .field
+    =f.file_field :avatar
 
   -if @agency
     =render partial: 'devise/registrations/agency/form', locals: {form: f, agency: @agency, resource: @user}
   -elsif @applicant
     =render partial: 'devise/registrations/applicant/form', locals: {form: f, applicant: @applicant, resource: @user}
   -elsif @admin
-    =render partial: 'devise/registrations/admin/form', locals: {form: f, admin: @admin, resource: @user}    
+    =render partial: 'devise/registrations/admin/form', locals: {form: f, admin: @admin, resource: @user}
+
+  .actions
+    =f.submit
