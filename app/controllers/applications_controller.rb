@@ -1,5 +1,6 @@
 class ApplicationsController < ApplicationController
     def index
+        @applications = Agency.find(params[:id]).applications
     end
 
     def show
