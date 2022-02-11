@@ -26,6 +26,26 @@ pr = pra.create_admin!({
   contact_no: "+639170000003"
 })
 
+categories = Category.create!([
+  {
+    name: "Advertising"
+  },
+  {
+    name: "Maintenance/Electrical"
+  },
+  {
+    name: "Academe/Education"
+  },
+  {
+    name: "Maintenance/Facilities"
+  },
+  {
+    name: "Hotel and Restaurant/Food"
+  },
+  {
+    name: "Transportation/Freight Forwarding"
+  }
+  ])
 agency1 = User.create!({email: "agency1@abrodie.com", password: "123456", password_confirmation: "123456"})
 # create an agency with license validity 700 days from seeding day
 agency = agency1.create_agency!({
@@ -37,11 +57,20 @@ agency = agency1.create_agency!({
   address: "2401 Taft Ave, Manila"
 })
 
+job = agency.jobs.create!({
+  title: "Cook for Michelin's karinderya",
+  location: "Belgium",
+  employer: "Michelin",
+  vacancies: 5,
+  salary: 20000,
+  desc: "Get to cook for Michelin's karinderya in Belgium!"
+})
+
 applicant1 = User.create!({email: "applicant1@abrodie.com", password: "123456", password_confirmation: "123456"})
 applicant = applicant1.create_applicant!({
   fname: "Spongebob",
   lname: "Squarepants",
   educational_level: "High school graduate",
-  
+  birth_date: DateTime.new(1997, 8, 29),
   specialization: "Cook"
 })
