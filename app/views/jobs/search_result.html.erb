@@ -6,13 +6,13 @@
 
 <div class= 'jobsandagencies-wrapper'>
     <div class='jobsandagencies-searchbar'
-        <%= form_tag search_job_path, id:'search-job', remote: true, method: :get do %>
+        <%= form_tag(search_result_path, :method => "get", local: false) do %>
             <span>
                 <ion-icon name="search"></ion-icon>
             </span>
-            <%= text_field_tag :job, params[:job] %>
-            <%= submit_tag 'FIND JOB', id: 'find-job-btn', type: :submit %>
-            <% end %>
+            <%= search_field_tag :job, params[:job] %>
+            <%= button_tag 'FIND JOB', class: 'find-job-btn',:name => nil %>
+        <% end %>
     </div>
     <div id='search_result'>
         <%= render 'jobs/search_result' %>
