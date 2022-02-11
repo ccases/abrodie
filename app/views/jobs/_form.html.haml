@@ -24,11 +24,12 @@
   .field
     =f.label :location, "Location"
     %br/
-    =f.select(:desc, Job.available_countries.map{ |value| [value, value] })
+    =f.select(:location, Job.available_countries.map{ |value| [value, value] })
 
-  =f.fields_for :categories do |af|
-    =af.label :name, "Category"
-    =af.text_field :name
+  .field
+    =f.label :salary, "Salary (Php)"
+    %br/
+    =f.number_field :salary
 
   .actions
     = f.submit 'Save'
