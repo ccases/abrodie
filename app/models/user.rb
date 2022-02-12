@@ -25,4 +25,5 @@ class User < ApplicationRecord
   def create_drafts
     self.rooms.create!(name: "drafts_#{self.id}")
   end
+
 end

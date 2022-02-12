@@ -1,0 +1,31 @@
+.job-show-container{
+  font-family: 'Poppins';
+  font-weight: 400;
+  max-width: 1200px;
+  margin:auto;
+  .job-title{
+    font-weight: 600;
+  }
+  .job-detail{
+    display:flex;
+    align-items:center;
+    vertical-align: middle;
+    padding: 10px;
+    i{
+      padding-right: 5px;
+    }
+  }
+  .job-agency-details{
+    margin-top: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 10px 10px 20px;
+  }
+  .job-agency-avatar{
+    display: flex;
+    align-items: center;
+    .name{
+      padding-left: 5px;
+    }
+  }
+}

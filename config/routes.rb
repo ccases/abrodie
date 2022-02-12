@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   root to: "pages#index"
 
+  # match 'users/sign_out', to: 'sessions#destroy', via: 'delete'
   get 'agencies/index'
   get 'reviews/new'
   get 'reviews/edit'
@@ -39,8 +40,10 @@ Rails.application.routes.draw do
   resources :pages
 
   resources :jobs
-  resources :users
-
+  scope '/admins' do
+    resources :users
+  end
+  
   get 'admins/:user_type', to: 'admins#users', as: 'admin_users'
   get 'admins/new/:user_type', to: 'users#new', as: 'new_admin_user'
   # (new_)admin_users_path("agency" || "applicant" || "admin" || "user")
