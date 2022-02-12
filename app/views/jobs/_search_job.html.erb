@@ -1,17 +1,20 @@
 <div class='joblisting-wrapper'>
-    <div class='job-card'>
-        <div id='job-content'>
+    <div class='job-card-wrapper'>
+        <div class='job-card'>
             <% @results.each do |result| %> 
                 <div id='job-avatar'>
-            <% if result.agency.user.avatar.attached? %>
-            <%= image_tag result.agency.user.avatar.variant(resize_to_limit: [50, 50]) %>
-            <% else %>
-            <%= image_tag("no_avatar.png", size:"50") %>
-            <% end %>
-        </div>
-            <%= result.title %>
-            <%= result.location %>
-            <% end %>
+                    <% if result.agency.user.avatar.attached? %>
+                    <%= image_tag result.agency.user.avatar.variant(resize_to_limit: [50, 50]) %>
+                    <% else %>
+                    <%= image_tag("no_avatar.png", size:"50") %>
+                    <% end %>
+                </div>
+                <div id='job-content'>
+                <%= result.title %>
+                <br/>
+                <%= result.location %>
+                <% end %>
+            </div>
         </div>
     </div>
 </div>
