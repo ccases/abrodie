@@ -64,3 +64,5 @@ group :test do
   gem "webdrivers"
   gem "rspec-rails"
 end
+
+gem "ransack", "~> 2.5"
