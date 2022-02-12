@@ -11,22 +11,22 @@
       =f.text_field :agency_id
   -elsif current_user.agency
     =f.hidden_field :agency_id, value: current_user.agency.id
-  .field
+  .job-title
     =f.label :title, "Job title"
     %br/
     =f.text_field :title
 
-  .field
+  .job-description
     =f.label :desc, "Job description"
     %br/
     =f.rich_text_area :desc
 
-  .field
+  .job-location
     =f.label :location, "Location"
     %br/
     =f.select(:location, Job.available_countries.map{ |value| [value, value] })
 
-  .field
+  .job-salary
     =f.label :salary, "Salary (Php)"
     %br/
     =f.number_field :salary
