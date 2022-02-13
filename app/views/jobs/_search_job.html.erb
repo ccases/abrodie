@@ -1,20 +1,32 @@
-<div class='joblisting-wrapper'>
-    <div class='job-card-wrapper'>
-        <div class='job-card'>
-            <% @results.each do |result| %> 
-                <div id='job-avatar'>
-                    <% if result.agency.user.avatar.attached? %>
-                    <%= image_tag result.agency.user.avatar.variant(resize_to_limit: [50, 50]) %>
-                    <% else %>
-                    <%= image_tag("no_avatar.png", size:"50") %>
-                    <% end %>
-                </div>
-                <div id='job-content'>
-                <%= result.title %>
-                <br/>
-                <%= result.location %>
-                <% end %>
-            </div>
-        </div>
-    </div>
-</div>
+<head>
+  <link href="https://fonts.googleapis.com" rel="preconnect"></link>
+  <link href="https://fonts.gstatic.com" rel="preconnect"></link>
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;500&family=Poppins&family=Raleway:wght@500&family=Roboto&display=swap" rel="stylesheet"></link>
+</head>
+
+
+<table>
+  <tbody>
+    <% @results.each do |result| %>
+      <tr>
+        <td>
+            <% if result.agency.user.avatar.attached? %>
+            <%= image_tag result.agency.user.avatar.variant(resize_to_limit: [50, 50]) %>
+            <% else %>
+            <%= image_tag("no_avatar.png", size:"50") %>
+            <% end %>
+        </td>
+        <td>
+          <%= result.title %>
+        </td>
+        <td>
+          <%= result.location %>
+        </td>
+        <td>
+          <%= link_to 'View' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br/>

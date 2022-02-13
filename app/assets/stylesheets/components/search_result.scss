@@ -33,12 +33,12 @@
     border-style: none;
     box-shadow: none;
 }
+
 .job-card-title {
     position: fixed;
+    font-family: 'Mulish',sans-serif;
+    font-weight: 500;
 }
-.joblisting-wrapper {
-    height: 80vh;
-    .job-card-wrapper {
-        overflow-y:scroll;
-    }
-}
+
+
+

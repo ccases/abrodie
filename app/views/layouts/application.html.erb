@@ -63,7 +63,6 @@
         <%else%>
           <%= render 'pages/navbar'%>
         <% end %>
-
         <div class="main-content">
           <% flash.each do |message_type, message| %>
             <%= javascript_tag "M.toast({html: '#{message}', classes: '#{message_type}'})" %>
