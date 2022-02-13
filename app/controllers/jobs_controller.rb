@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-  before_action :authenticate_admin_or_agency!, only: [:edit, :create, :destroy]
+  before_action :authenticate_admin_or_agency!, only: [:edit, :create]
   before_action :set_job, only: [:edit, :update, :destroy, :show]
 
   def index

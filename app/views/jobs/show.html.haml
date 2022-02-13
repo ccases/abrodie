@@ -18,7 +18,10 @@
   -if current_user&.applicant
     -if @application.persisted?
       .apply.remove
-      =link_to "Remove application for this job", application_path(@application), data: {"turbo-method": "delete", confirm: "Remove application for this job?"}
+      =button_to("Remove application for this job", 
+        job_application_path(@job, @application), 
+        method: :delete, 
+        data: {confirm: "Remove application for this job?"})
     -else
       .apply
         =form_with(model: [@job, @application], html: {"data-turbo": "false"}) do |f|

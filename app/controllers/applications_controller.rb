@@ -31,13 +31,8 @@ class ApplicationsController < ApplicationController
     end
 
     def destroy
-        debugger
-        # @job = Job.find(params[:job_id])
-        # @application = @job.applications.find(params[:id])
-
-        
-        @application = Application.find(params[:id])
-        @job = @application.job
+        @job = Job.find(params[:job_id])
+        @application = @job.applications.find(params[:id])
         @application.destroy
         redirect_to job_path(@job), :flash => {:success => "Removed application for this job."}
     end
