@@ -2,20 +2,27 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: row;
     position: fixed;
     width: 80%;
+    span {
+        height: 42px;
+        padding-left:.5rem;
+        padding-top: .5rem;
+        border: 0.5px solid #F1F2F7;
+        border-right: none;
+        border-radius: 15px 0 0 15px;
+    }
     #job {
         width: 50%;
         position: relative;
-        span {
-            position: absolute;
-            display:inline-block;
-            padding-left:.5rem;
-            padding-top: .5rem;
-        }
+        border: 0.5px solid #F1F2F7;
+        border-left: none;
+        height: 40px;
+        margin: 0;
+        padding-left: 1rem;
         input {
             padding: .5rem;
-            padding-left: 2rem;
             border-radius: 25px;
             outline: none;
             border-bottom: none;
@@ -32,6 +39,7 @@
     border-radius: 0 15px 15px 0;
     border-style: none;
     box-shadow: none;
+    padding: 12px;
 }
 
 .job-card-title {
@@ -52,9 +60,9 @@
     margin: 80px;
     background: #F1F2F7;
     border-radius: 10px;
-  }
+}
   
-  .job-grid-item {
+.job-grid-item {
     background: #ffffff;
     display: flex;
     flex-direction: column;
@@ -84,7 +92,7 @@
             color: #000000;
         }
     }
-  }
+}
   
   
 
