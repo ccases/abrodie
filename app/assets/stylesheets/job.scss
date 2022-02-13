@@ -1,0 +1,87 @@
+.new-job-title{
+    color: #4540DB;
+    font-family: 'Poppins', sans-serif;
+    align-items: center;
+}
+
+.job-title {
+    color: #4540DB;
+    font-family: 'Montserrat', sans-serif;
+    align-items: center;
+  
+    text-transform: uppercase;
+    label {
+        color: #4540DB;
+        font-family: 'Montserrat', sans-serif;
+    }
+}
+
+#job_title {
+    border-bottom: 2px solid #4540DB;
+    outline: none;
+    box-shadow: none;
+}
+
+.job-description{
+    label {
+        color: #4540DB;
+        font-family: 'Montserrat', sans-serif;
+    }
+}
+
+#job_desc {
+    border: 2px solid #4540DB;
+}
+
+.trix-button-row{
+    border-bottom: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.job-location {
+    label {
+        color: #4540DB;
+        font-family: 'Montserrat', sans-serif;
+    }
+    select {
+        opacity: 100;
+    }
+}
+
+#job_location{
+    border-bottom: 2px solid #4540DB;
+    outline: none;
+    box-shadow: none;
+}
+
+.job-salary{
+    label {
+        color: #4540DB;
+        font-family: 'Montserrat', sans-serif;
+    }
+}
+
+#job_salary{
+    border-bottom: 2px solid #4540DB;
+    outline: none;
+    box-shadow: none;
+}
+
+.actions{
+    input {
+        align-self: center;
+    justify-self: start;
+    grid-area: form;
+    background: #4540DB;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-size: 10px;
+    /* or 125% */
+    padding: 4px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    }
+}
