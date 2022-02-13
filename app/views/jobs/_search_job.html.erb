@@ -1,7 +1,7 @@
 <head>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;600&family=Poppins&family=Raleway:wght@300;700&family=Roboto&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;600&family=Poppins&family=Quicksand:wght@700&family=Raleway:wght@300;700&family=Roboto&display=swap" rel="stylesheet">
 </head>
 
 
@@ -14,10 +14,10 @@
       <% else %>
       <%= image_tag("no_avatar.png", size:"50") %>
       <% end %>
-    </div>
+    </div><br/>
     <div id='job-title'>
-      <%= result.title.upcase %> <br/>
-    </div>
+      <%= result.title.upcase %>
+    </div><br/>
     <div id='job-location'>
       <% if result.location.present? %>
         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
@@ -34,9 +34,9 @@
       &nbsp;
       Undisclosed
       <% end %>
-    </div>
-    <div id='job-action'> </br>
-      <%= link_to 'View' %>
+    </div></br>
+    <div id='job-action'>
+      <%= link_to 'VIEW' %>
     </div>
   </div>
   <% end %>
