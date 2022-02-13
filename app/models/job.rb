@@ -8,6 +8,17 @@ class Job < ApplicationRecord
   accepts_nested_attributes_for :applications
   accepts_nested_attributes_for :categories
 
+  # def self.search(job)
+  #   if job
+  #     where(:all, :conditions => ['name LIKE ?', "%#{job}%"])
+  #   else
+  #     where(:all)
+  #   end
+
+  def self.search(search)
+    where("lower(jobs.title) LIKE :search", search: "%#{search.downcase}%").uniq
+  end
+
   def self.available_countries
     [
       "Afghanistan",

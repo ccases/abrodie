@@ -2,6 +2,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    width: 80%;
     #job {
         width: 50%;
         position: relative;
@@ -21,6 +23,7 @@
         }
     }
 }
+
 .find-job-btn {
     background: #4540db;
     font-family: 'Mulish', sans-serif;
@@ -30,3 +33,12 @@
     border-style: none;
     box-shadow: none;
 }
+
+.job-card-title {
+    position: fixed;
+    font-family: 'Mulish',sans-serif;
+    font-weight: 500;
+}
+
+
+

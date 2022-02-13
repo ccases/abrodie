@@ -42,9 +42,10 @@ class JobsController < ApplicationController
     redirect_to jobs_path, :flash => {:success => "Job destroyed"}
   end
 
+  # if job is present show result, else show all jobs available
   def job_search
     if params[:job].present?
-      @job = Job.new_search (params[:job])
+      @job = Job.search (params[:search]).downcase
       if @job
         respond_to do |format|
           format.js { render partial: 'jobs/search_result'}
@@ -62,6 +63,17 @@ class JobsController < ApplicationController
       end
     end
   end
+
+  def search_result
+    if params[:search].present?
+      @job = params[:search].downcase
+      @results = Job.all.where("lower(title) LIKE :search", search:"%#{@job}%")
+    else
+      @results = Job.all 
+    end
+  end
+
+  
 
   private
 

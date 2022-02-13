@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   get '/dashboard', to: "pages#dashboard", as: "dashboard"
   get '/guidelines', to: "pages#dashboard", as: "guidelines"
   get '/jobsandagencies', to: "pages#applicant_jobs", as: "jobsandagencies"
-  get 'search_job' => 'jobs#job_search'
+  get '/search_job', to:'jobs#search_result', as: "searchjob"
+  get '/search_result', to:'jobs#job_search', as:'search_result'
 
 
 
