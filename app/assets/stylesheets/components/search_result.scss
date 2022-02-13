@@ -36,9 +36,11 @@
 
 .job-card-title {
     position: fixed;
-    font-family: 'Mulish',sans-serif;
-    font-weight: 500;
     padding-left: 80px;
+    h6 {
+        font-family: 'Mulish',sans-serif;
+        font-weight: 700;
+    }
 }
 
 .job-grid-wrapper {
