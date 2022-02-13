@@ -15,9 +15,14 @@
     %i.material-icons access_time
     ="Last updated at #{time_ago_in_words(@job.updated_at)} ago"
 
-  .apply
-
-    APPLY BUTTON
+  -if current_user&.applicant
+    -if @application.persisted?
+      .apply.remove
+      =link_to "Remove application for this job", application_path(@application), data: {"turbo-method": "delete", confirm: "Remove application for this job?"}
+    -else
+      .apply
+        =form_with(model: [@job, @application], html: {"data-turbo": "false"}) do |f|
+          =f.submit "Apply for this job!"
 
   .job-desc
     =@job.desc
@@ -49,5 +54,5 @@
       =@job.agency.bio
   -if current_user == @job.agency.user
     = link_to 'Edit job', edit_job_path(@job)
-  \|
+    \|
   = link_to 'Back', jobs_path

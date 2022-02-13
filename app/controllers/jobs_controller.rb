@@ -7,6 +7,17 @@ class JobsController < ApplicationController
   end
 
   def show
+    if current_user&.applicant
+
+      if Application.exists?(applicant_id: current_user.applicant.id, job_id: @job.id)
+        @application = Application.find_by(applicant_id: current_user.applicant.id, job_id: @job.id)
+      else
+        applicant = current_user.applicant
+        @application = @job.applications.build(applicant_id: applicant.id)
+      end
+    else
+      @application = nil
+    end
   end
 
   def create

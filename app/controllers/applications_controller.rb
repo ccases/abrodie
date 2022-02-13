@@ -10,22 +10,54 @@ class ApplicationsController < ApplicationController
     end
 
     def show
-        
+        @dumy = 2
+        debugger
+    end
+
+    def edit
+
     end
 
     def create
+        authenticate_applicant!
+        @job = Job.find(params[:job_id])
+        @application = @job.applications.build(:applicant_id => current_user.applicant.id)
+
+        if @application.save
+            redirect_to job_path(@job), :flash => {:success => "Successfully applied for the job!"}
+        else
+            redirect_to job_path(@job), :flash => {:error => "An error has occured."}
+        end
     end
 
     def destroy
+        debugger
+        # @job = Job.find(params[:job_id])
+        # @application = @job.applications.find(params[:id])
+
+        
+        @application = Application.find(params[:id])
+        @job = @application.job
+        @application.destroy
+        redirect_to job_path(@job), :flash => {:success => "Removed application for this job."}
+    end
+
+    def update
+
     end
 
     def update 
+
     end
 
-    def applications_params
+    private
+
+    def application_params
+        params.require(:application).permit(:applicant_id => current_user.applicant.id)
     end
 
     def set_applications
+
     end
 
 end
