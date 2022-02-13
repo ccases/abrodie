@@ -5,28 +5,23 @@
 </head>
 
 
-<table>
-  <tbody>
-    <% @results.each do |result| %>
-      <tr>
-        <td>
-            <% if result.agency.user.avatar.attached? %>
-            <%= image_tag result.agency.user.avatar.variant(resize_to_limit: [50, 50]) %>
-            <% else %>
-            <%= image_tag("no_avatar.png", size:"50") %>
-            <% end %>
-        </td>
-        <td>
-          <%= result.title %>
-        </td>
-        <td>
-          <%= result.location %>
-        </td>
-        <td>
-          <%= link_to 'View' %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<br/>
+<div class="grid-wrapper">
+<% @results.each do |result| %>
+  <div class="grid-item">
+  <div>
+  <% if result.agency.user.avatar.attached? %>
+  <%= image_tag result.agency.user.avatar.variant(resize_to_limit: [50, 50]) %>
+  <% else %>
+  <%= image_tag("no_avatar.png", size:"50") %>
+  <% end %>
+  </div>
+  <div>
+  <%= result.title %> <br/>
+  <%= result.location %>
+  </div>
+  <div> </br>
+  <%= link_to 'View' %>
+  </div>
+  </div>
+  <% end %>
+</div>

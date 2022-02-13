@@ -38,7 +38,31 @@
     position: fixed;
     font-family: 'Mulish',sans-serif;
     font-weight: 500;
+    padding-left: 80px;
 }
 
+.grid-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(auto);
+    grid-gap: 2rem;
+    grid-row-gap: 1.5rem;
+    margin: 80px;
+    background: #F1F2F7;
+    border-radius: 10px;
+  }
+  
+  .grid-item {
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    margin: 30px;
+    height: 270px;
+  }
+  
+  
 
 
