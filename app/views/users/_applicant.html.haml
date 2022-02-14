@@ -15,9 +15,9 @@
           %p="#{@applicant.user.email}"
           %br/
         .birthday
-          %p Date of birth
-          -if @applicant.birth_date
-            %p="#{@applicant.birth_date.strftime("%B %d, %Y")}"
+          %p Joined On:
+          -if @applicant.created_at
+            %p="#{@applicant.created_at.strftime("%B %d, %Y")}"
           %br/
 
   .user-other-container
@@ -33,7 +33,7 @@
       -else
         No resume uploaded yet.
     -if current_user&.id.to_s == params[:id]
-      =form_with model: @applicant, id: "resume-form" do |f|
+      =form_with model: @applicant, id: "resume-form", html: {"data-turbo": "false"} do |f|
         =f.file_field :resume_file
         =f.submit "UPLOAD NEW FILE"
 

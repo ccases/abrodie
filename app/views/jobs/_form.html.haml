@@ -21,6 +21,11 @@
     %br/
     =f.rich_text_area :desc
 
+  .job-title 
+    =f.label :employer, "Company"
+    %br/
+    =f.text_field :employer
+
   .job-location
     =f.label :location, "Location"
     %br/
@@ -30,6 +35,6 @@
     =f.label :salary, "Salary (Php)"
     %br/
     =f.number_field :salary
-
+  
   .actions
     = f.submit 'Save'

@@ -14,6 +14,13 @@
   .date
     =application.job.created_at.to_date
   
-  .view
-    =link_to "View", application_path(application)
+  .resume-download-link
+    -if application.applicant.resume_file.attached?
+      = link_to rails_blob_path( application.applicant.resume_file, disposition: 'attachment') do
+        %i.material-icons file_download
+        ="#{application.applicant.resume_file.filename}".truncate(20)
+        -# = link_to "Download #{@applicant.resume_file.filename}", rails_blob_path( @applicant.resume_file, disposition: 'attachment')
+    -else
+      No resume uploaded yet.
+
 

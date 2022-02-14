@@ -3,12 +3,14 @@
     = af.label :name
     = af.text_field :name
   %br/ 
-  .agency-kind
-    = af.label :kind
+  .agency-address
+    = af.label :kind, "KIND"
     = af.select :kind, ["Private", "Public"]
+  %br/ 
   .agency-kind
     = af.label :address
     = af.text_field :address
+  %br/ 
   .agency-kind
     = af.label :contact_no
     = af.telephone_field :contact_no 

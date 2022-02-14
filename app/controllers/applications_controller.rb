@@ -11,7 +11,6 @@ class ApplicationsController < ApplicationController
 
     def show
         @dumy = 2
-        debugger
     end
 
     def edit

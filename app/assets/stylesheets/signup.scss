@@ -248,3 +248,29 @@
 #user_avatar{
     font-family: 'Montserrat', sans-serif;
 }
+
+#user_agency_attributes_address {
+    border-bottom: none;
+    outline: none;
+    box-shadow: none;
+}
+
+#user_agency_attributes_contact_no{
+    border-bottom: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.agency-address{
+    label {
+        color: #4540DB;
+        font-family: 'Montserrat', sans-serif;
+    }
+    select {
+        opacity: 100;
+    }
+}
+
+#user_agency_attributes_kind{
+    border: 2px solid #4540DB;
+}
