@@ -1,15 +1,29 @@
+.guidelines-wrapper{
+    height: 100%;
+}
+
 .guidelines-title {
     color: #4540DB;
     font-family: 'Montserrat', sans-serif;
     align-items: center;
+    padding-left: 75px;
+    p {
+        background: #F1F2F7;
+        border-bottom: #4540DB 1px solid;
+        border-radius: 5px;
+        width: 50vw;
+        padding: 20px;
+        color: #000000;
+    }
 }
 
-.guidelines-wrapper{
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    .row-wrapper {
-        display: flex;
-        align-items: center;
+.guidelines-content {
+    padding-left: 75px;
+    padding-top: 50px;
+    font-family: 'Poppins', sans-serif;
+    h6 {
+        color: #4540DB;
+        padding-left: 20px;
+        font-family: 'Montserrat', sans-serif;
     }
 }
