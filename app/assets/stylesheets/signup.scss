@@ -7,6 +7,11 @@
             "hero form";                    
 }
 
+.hero {
+    margin-right: 50px;
+    margin-top: 50px;
+}
+
 .email-signup{
     grid-area: form;
     align-self: center;
@@ -48,6 +53,9 @@
     label {
         color: #4540DB;
         }
+    #pw-length {
+        font-size: 12px;
+    }
 }
 
 .password-confirm{

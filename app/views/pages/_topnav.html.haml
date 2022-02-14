@@ -1,20 +1,24 @@
-%nav
-  .topnav-wrapper
-    .col.s12
-      %a.breadcrumb{:href => "/dashboard"} Dashboard
-      %a.breadcrumb{:href => "#!"}
-        - if current_page?(guidelines_path)
-          Guidelines
-        - if current_page?(jobsandagencies_path)
-          Jobs and Agencies
-        - if current_page?(user_path(current_user))
-          Your Profile
-        - if current_page?(applications_path)
-          Submitted Applications
-        - if current_page?(jobs_path)
-          Received Applications
-        - if current_page?(admin_users_path('agency'))
-          Listed Agencies
-        - if current_page?(admin_users_path('applicant'))
-          Listed Applicants
-    
+%head
+  %link{:href => "https://fonts.googleapis.com", :rel => "preconnect"}/
+  %link{:crossorigin => "", :href => "https://fonts.gstatic.com", :rel => "preconnect"}/
+  %link{:href => "https://fonts.googleapis.com/css2?family=Mulish:wght@300;700&family=Poppins&family=Quicksand:wght@700&family=Raleway:wght@300;700&family=Roboto&display=swap", :rel => "stylesheet"}/
+
+  %body
+  .topnav
+    Dashboard >
+    = "&nbsp".html_safe
+    #topnav-breadcrumb
+      - if current_page?(guidelines_path)
+        Guidelines
+      - if current_page?(searchjob_path)
+        Jobs and Agencies
+      - if current_page?(user_path(current_user))
+        Your Profile
+      - if current_page?(applications_path)
+        Submitted Applications
+      - if current_page?(jobs_path)
+        Received Applications
+      - if current_page?(admin_users_path('agency'))
+        Listed Agencies
+      - if current_page?(admin_users_path('applicant'))
+        Listed Applicants

@@ -2,20 +2,27 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: row;
     position: fixed;
     width: 80%;
+    span {
+        height: 42px;
+        padding-left:.5rem;
+        padding-top: .5rem;
+        border: 0.5px solid #F1F2F7;
+        border-right: none;
+        border-radius: 15px 0 0 15px;
+    }
     #job {
         width: 50%;
         position: relative;
-        span {
-            position: absolute;
-            display:inline-block;
-            padding-left:.5rem;
-            padding-top: .5rem;
-        }
+        border: 0.5px solid #F1F2F7;
+        border-left: none;
+        height: 40px;
+        margin: 0;
+        padding-left: 1rem;
         input {
             padding: .5rem;
-            padding-left: 2rem;
             border-radius: 25px;
             outline: none;
             border-bottom: none;
@@ -32,13 +39,61 @@
     border-radius: 0 15px 15px 0;
     border-style: none;
     box-shadow: none;
+    padding: 12px;
 }
 
 .job-card-title {
     position: fixed;
-    font-family: 'Mulish',sans-serif;
-    font-weight: 500;
+    padding-left: 80px;
+    h6 {
+        font-family: 'Mulish',sans-serif;
+        font-weight: 700;
+    }
 }
 
+.job-grid-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(auto);
+    grid-gap: 2rem;
+    grid-row-gap: 1.5rem;
+    margin: 80px;
+    background: #F1F2F7;
+    border-radius: 10px;
+}
+  
+.job-grid-item {
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    margin: 30px;
+    height: 270px;
+    box-shadow:  2px 3px 2px lightgray;
+    #job-title {
+        font-family:'Raleway', sans-serif;
+        font-weight: 700;
+    }
+    #job-location {
+        font-family: 'Raleway', sans-serif;
+        font-weight: 300;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #job-action {
+        background: #8CEEC1;
+        font-family: 'Quicksand', sans-serif;
+        padding: 5px 10px 5px 10px;
+        border-radius: 15px;
+        a {
+            color: #000000;
+        }
+    }
+}
+  
+  
 
 

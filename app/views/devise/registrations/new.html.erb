@@ -1,12 +1,12 @@
 <div class="main-container-signup">
 
   <div class="hero">
-      <p id="slogan">Ready ka na mag Abroad? </p>
+      <p id="slogan">Ready ka na mag </br> Abroad? </p>
   </div>
 <%= form_for(resource, as: resource_name, html: {"data-turbo": "false"}, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
   <div class="title">
-    <p>Sign Up</p>
+    <p>Create an Account</p>
   </div>
   <div class="email-signup">
     <%= f.label :email %><br />
@@ -16,7 +16,7 @@
   <div class="password-signup">
     <%= f.label :password %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em id='pw-length'>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
