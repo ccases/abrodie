@@ -6,4 +6,8 @@ class Agency < ApplicationRecord
   has_many :reviews
   has_many :applications, through: :jobs
 
+
+  validates :name, :address, :contact_no, presence: true
+
+  
 end

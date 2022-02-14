@@ -4,6 +4,7 @@ class ApplicantsController < ApplicationController
     @applicant.update!(applicant_params)
   end
 
+
   private
 
   def set_applicant

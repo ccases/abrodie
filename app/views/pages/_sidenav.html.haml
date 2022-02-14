@@ -26,7 +26,8 @@
           =link_to "Messages", room_path("drafts_#{current_user.id}")
         #sign-out
           %ion-icon{:name => 'arrow-round-forward'}
-          =link_to "Sign out", destroy_user_session_path, data: { "turbo-method": :delete }
+          =link_to "Sign out", destroy_user_session_path, data: {'turbo-method': :delete}
+          
   -elsif current_user.agency
     .sidenav-wrapper
       .sidenav-logo
@@ -46,7 +47,8 @@
           =link_to "Messages", room_path("drafts_#{current_user.id}")
         #sign-out
           %ion-icon{:name => 'arrow-round-forward'}
-          =link_to "Sign out", destroy_user_session_path, data: { "turbo-method": :delete }
+          =link_to "Sign out", destroy_user_session_path, data: {'turbo-method': :delete}
+          
   -elsif current_user.admin
     .sidenav-wrapper
       .sidenav-logo
@@ -60,4 +62,4 @@
           =link_to "Applicants", admin_users_path("applicant")
         #sign-out
           %ion-icon{:name => 'arrow-round-forward'}
-          =link_to "Sign out", destroy_user_session_path, data: { "turbo-method": :delete }
+          =link_to "Sign out", destroy_user_session_path, data: {'turbo-method': :delete}

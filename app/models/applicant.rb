@@ -5,4 +5,11 @@ class Applicant < ApplicationRecord
   has_many :applications
 
   has_one_attached :resume_file
+
+  validates :fname, :lname, presence: true
+
+  private
+
+
+
 end

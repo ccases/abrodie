@@ -1,6 +1,61 @@
 %p#notice= notice
+.job-show-container
+  .job-title
+    %h5=@job.title
+
+  .job-detail
+    %i.material-icons work
+    ="Company: #{@job.employer}"
+  
+  .job-detail
+    %i.material-icons location_on
+    ="Location: #{@job.location}"
+
+  .job-detail
+    %i.material-icons access_time
+    ="Last updated at #{time_ago_in_words(@job.updated_at)} ago"
+
+  -if current_user&.applicant
+    -if @application.persisted?
+      .apply.remove
+        =button_to("Remove application for this job", 
+          job_application_path(@job, @application), 
+          method: :delete, 
+          data: {confirm: "Remove application for this job?"})
+    -else
+      .apply
+        =form_with(model: [@job, @application], html: {"data-turbo": "false"}) do |f|
+          =f.submit "Apply for this job!"
+
+  .job-desc
+    =@job.desc
+  
+  -unless @job.salary_hidden?
+    .job-detail
+      %i.material-icons attach_money
+      Salary: Php
+      =@job.salary
+
+  -unless @job.vacancies_hidden?
+    .job-detail
+      %i.material-icons check_circle
+      Vacancies:
+      =@job.vacancies
 
 
-= link_to 'Edit', edit_job_path(@job)
-\|
-= link_to 'Back', jobs_path
+  .job-agency-details
+
+    %h5 About the company
+    .job-agency-avatar
+      -if @job.agency.user.avatar.attached?
+        =image_tag @job.agency.user.avatar.variant(:sidebar_icon)
+      -else
+        =image_tag "no_avatar.png", size: "72"
+      %p.name=link_to @job.agency.name, user_path(@job.agency.user)
+
+    .job-agency-bio
+      =@job.agency.bio
+  -if current_user == @job.agency.user
+    = link_to 'Edit job', edit_job_path(@job)
+    \|
+  = link_to 'Back', jobs_path
