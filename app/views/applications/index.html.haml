@@ -1,8 +1,18 @@
-.heading-app
-    %p All Applications
-.title-headings 
-    %p Application Details
-    %p Agency
-    %p Date
-    %p Resume
-=render partial: 'applications/application', collection: @applications
+-if current_user&.agency
+    .heading-app
+        %p All Applications
+    .title-headings 
+        %p Applicant Details
+        %p Job
+        %p Date
+        %p Resume
+    =render partial: 'applications/application', collection: @applications
+-elsif current_user&.applicant
+    .heading-app
+        %p All Applications
+    .title-headings 
+        %p Application Details
+        %p Agency
+        %p Date
+        %p Job
+    =render partial: 'applications/application_applicant', collection: @applications, as: :application

@@ -51,6 +51,25 @@
     }
 }
 
+.job-new {
+    position: fixed;
+    right: 0;
+    margin-right: 80px;
+    width: max-content;
+
+    h6 {
+        font-family: 'Mulish',sans-serif;
+        font-weight: 700;
+        background-color: #4540db;
+        padding: 10px;
+        color: white;
+        border-radius: 5px;
+        a{
+            color: inherit;
+        }
+    }
+}
+
 .job-grid-wrapper {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -75,6 +94,7 @@
     #job-title {
         font-family:'Raleway', sans-serif;
         font-weight: 700;
+        text-align: center;
     }
     #job-location {
         font-family: 'Raleway', sans-serif;
