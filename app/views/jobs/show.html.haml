@@ -56,6 +56,9 @@
     .job-agency-bio
       =@job.agency.bio
   -if current_user == @job.agency.user
-    = link_to 'Edit job', edit_job_path(@job)
-    \|
+    .button
+      = link_to 'Edit job', edit_job_path(@job)
+    .button.red#mybtn
+      = button_to 'Delete job', job_path(@job), data: { confirm: "Are you sure?" }, method: :delete
+    
   = link_to 'Back', jobs_path

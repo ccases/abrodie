@@ -1,6 +1,11 @@
 
 .job-card-title
   %h6 All Jobs
+
+.job-new
+  -if current_user&.agency
+    %h6=link_to "Post a new job", new_job_path
+
 .job-grid-wrapper
   =render partial: 'jobs/job', collection: @jobs
 

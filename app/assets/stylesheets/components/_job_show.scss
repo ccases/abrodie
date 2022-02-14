@@ -48,4 +48,25 @@
 
     }
   }
+
+  .button{
+    outline: none;
+    background: #4540DB;
+    width: max-content;
+    padding: 5px;
+    margin: 10px 0;
+    color: white;
+    border-radius: 5px;
+
+    button, a{
+      background:none;
+      outline: none;
+      border:none;
+      appearance: none;
+      color: inherit;
+      &:hover{
+        cursor: pointer;
+      }
+    }
+  }
 }
