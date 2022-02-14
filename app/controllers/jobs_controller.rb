@@ -3,7 +3,11 @@ class JobsController < ApplicationController
   before_action :set_job, only: [:edit, :update, :destroy, :show]
 
   def index
-    @jobs = Job.all
+    if params[:agency_id]
+      @jobs = Agency.find(params[:agency_id]).jobs
+    else
+      @jobs = Job.all
+    end
   end
 
   def show

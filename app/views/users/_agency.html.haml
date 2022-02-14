@@ -1,5 +1,3 @@
-.header-msg
-  Applicants can view your agency profile. Please make sure your details are up-to-date and complete.
 .profile-details-container
   .profile-card
     .image-container
@@ -24,6 +22,8 @@
       %h5 BIO
       %p=@agency.bio
     #agency-contacts
+      %h5 Job posts
+      =link_to "View all jobs by #{@agency.name}", agency_jobs_path(@agency)
 
       %h5 MESSAGE
       -if current_user
