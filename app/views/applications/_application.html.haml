@@ -1,24 +1,25 @@
+-a = application.applicant
 .application-container
   .container-wide
-    -if application.job.agency.user.avatar.attached?
-      =image_tag application.job.agency.user.avatar.variant(:msg)
+    -if a.user.avatar.attached?
+      =image_tag a.user.avatar.variant(:msg)
     -else
       =image_tag "no_avatar.png", size: "50"
     .name-container
-      %p.name=application.job.title
+      %p.name="#{a.fname} #{a.lname}"
       %p.ago="Last updated: #{time_ago_in_words(application.job.updated_at)} ago"
   
   .agency
-    %p.name=application.job.agency.name
+    %p.name=link_to application.job.title, job_path(application.job)
 
   .date
     =application.job.created_at.to_date
   
   .resume-download-link
-    -if application.applicant.resume_file.attached?
-      = link_to rails_blob_path( application.applicant.resume_file, disposition: 'attachment') do
+    -if a.resume_file.attached?
+      = link_to rails_blob_path( a.resume_file, disposition: 'attachment') do
         %i.material-icons file_download
-        ="#{application.applicant.resume_file.filename}".truncate(20)
+        ="#{a.resume_file.filename}".truncate(20)
         -# = link_to "Download #{@applicant.resume_file.filename}", rails_blob_path( @applicant.resume_file, disposition: 'attachment')
     -else
       No resume uploaded yet.
