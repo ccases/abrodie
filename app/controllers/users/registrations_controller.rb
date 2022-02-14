@@ -65,7 +65,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
         keys: [:avatar, applicant_attributes: [:fname, :lname]])
     elsif params[:user][:agency_attributes]
       devise_parameter_sanitizer.permit(:sign_up, 
-        keys: [:avatar, agency_attributes: [:name, :kind]])
+        keys: [:avatar, agency_attributes: [:name, :kind, :address, :contact_no]])
     end
   end
 

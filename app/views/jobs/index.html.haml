@@ -1,25 +1,33 @@
-%h1 Listing jobs
 
-%table
-  %thead
-    %tr
-      %th Job title
-      %th Description
-      %th Location
-      %th
-      %th
-      %th
+.job-card-title
+  %h6 All Jobs
+.job-grid-wrapper
+  =render partial: 'jobs/job', collection: @jobs
 
-  %tbody
-    - @jobs.each do |job|
-      %tr
-        %td= job.title
-        %td= job.desc.to_plain_text.truncate(40)
-        %td= job.location
-        %td= link_to 'Show', job_path(job.id)
-        %td= link_to 'Edit', edit_job_path(job.id)
-        %td= link_to 'Destroy', job, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-%br
 
-= link_to 'New Job', new_job_path
+-# %h1 Listing jobs
+
+-# %table
+-#   %thead
+-#     %tr
+-#       %th Job title
+-#       %th Description
+-#       %th Location
+-#       %th
+-#       %th
+-#       %th
+
+-#   %tbody
+-#     - @jobs.each do |job|
+-#       %tr
+-#         %td= job.title
+-#         %td= job.desc.to_plain_text.truncate(40)
+-#         %td= job.location
+-#         %td= link_to 'Show', job_path(job.id)
+-#         %td= link_to 'Edit', edit_job_path(job.id)
+-#         %td= link_to 'Destroy', job, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+-# %br
+-# -if current_user.agency
+-#   = link_to 'New Job', new_job_path
