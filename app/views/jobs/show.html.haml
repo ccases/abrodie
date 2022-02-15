@@ -27,14 +27,17 @@
         =form_with(model: [@job, @application], html: {"data-turbo": "false"}) do |f|
           =f.submit "Apply for this job!"
 
+  -# -unless @job.salary_hidden?
+  .job-detail
+    %i.material-icons attach_money
+    Salary: Php
+    =@job.salary
+    -if @converted
+      =" | #{@currency} #{@converted.round(2)}"
+
   .job-desc
     =@job.desc
   
-  -unless @job.salary_hidden?
-    .job-detail
-      %i.material-icons attach_money
-      Salary: Php
-      =@job.salary
 
   -unless @job.vacancies_hidden?
     .job-detail
