@@ -2,18 +2,14 @@
 
 * Ruby version 2.7.4
 
-* System dependencies
+* Rails version 7.0
 
-* Configuration
+* Materialize CSS
 
-* Database creation
+* Redis
 
-* Database initialization
+* AWS S3
 
-* How to run the test suite
+* Tested with RSpec
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
