@@ -4,7 +4,7 @@ class ApplicantsController < ApplicationController
     if @applicant.update(applicant_params)
       redirect_to user_path(@applicant.user), :flash => {:success => "Applicant updated"}
     else
-      redirect_to user_path(@applicant.user), :flash => {:error => "Must be a docx/doc or pdf file"}
+      redirect_to user_path(@applicant.user), :flash => {:error => "Must be a doc or pdf file"}
     end
   end
 
