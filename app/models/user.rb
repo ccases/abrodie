@@ -15,6 +15,8 @@ class User < ApplicationRecord
     attachable.variant :navbar_icon, resize_to_limit: [45, 45]
   end
 
+  validate :correct_avatar_mime_type
+
   has_and_belongs_to_many :rooms
   has_many :messages
 
@@ -26,4 +28,11 @@ class User < ApplicationRecord
     self.rooms.create!(name: "drafts_#{self.id}")
   end
 
+  private
+
+  def correct_avatar_mime_type
+    if avatar.attached? && !avatar.content_type.in?(%w(image/jpeg image/png))
+      errors.add(:avatar, 'Must be a jpeg/jpg or png file')
+    end
+  end
 end
