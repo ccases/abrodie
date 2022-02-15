@@ -8,6 +8,8 @@ class Job < ApplicationRecord
   accepts_nested_attributes_for :applications
   accepts_nested_attributes_for :categories
 
+  validates :location, :salary, :title, :desc, :employer, presence: true
+
   # def self.search(job)
   #   if job
   #     where(:all, :conditions => ['name LIKE ?', "%#{job}%"])

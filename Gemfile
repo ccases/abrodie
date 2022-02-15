@@ -33,6 +33,7 @@ gem "hamlit-rails"
 gem "aws-sdk-s3", require: false
 # gem 'bootstrap', '~> 5.1.3'
 gem 'materialize-sass', '~> 1.0.0'
+gem 'httparty'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -53,7 +54,7 @@ group :development do
 end
 
 group :production do
-  # gem 'pg'
+  gem 'pg'
 end
 
 

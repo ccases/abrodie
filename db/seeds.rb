@@ -74,3 +74,4 @@ applicant = applicant1.create_applicant!({
   birth_date: DateTime.new(1997, 8, 29),
   specialization: "Cook"
 })
+ 
