@@ -11,7 +11,7 @@ class JobsController < ApplicationController
   end
 
   def show
-    res = ForexApi::Client.convert_to(@job.location, @job.salary)
+    res = ForexApi::Client.convert_to_country(@job.location, @job.salary)
     @currency = ForexApi::Client.find_currency(@job.location)
     @converted = res[:data]["converted_amount"]
     if current_user&.applicant
