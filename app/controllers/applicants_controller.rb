@@ -1,7 +1,11 @@
 class ApplicantsController < ApplicationController
   before_action :set_applicant, only: %i[update]
   def update
-    @applicant.update!(applicant_params)
+    if @applicant.update(applicant_params)
+      redirect_to user_path(@applicant.user), :flash => {:success => "Applicant updated"}
+    else
+      redirect_to user_path(@applicant.user), :flash => {:error => "Must be a docx/doc or pdf file"}
+    end
   end
 
 
@@ -12,6 +16,6 @@ class ApplicantsController < ApplicationController
   end
 
   def applicant_params
-    params.require(:applicant).permit(:resume_file)
+    params.require(:applicant).permit(:resume_file, :id)
   end
 end

@@ -32,8 +32,10 @@
         -# = link_to "Download #{@applicant.resume_file.filename}", rails_blob_path( @applicant.resume_file, disposition: 'attachment')
       -else
         No resume uploaded yet.
-    -if current_user&.id.to_s == params[:id]
+    -if current_user == @user
       =form_with model: @applicant, id: "resume-form", html: {"data-turbo": "false"} do |f|
+        =render 'layouts/error_messages', object: f.object
+        =f.hidden_field :id, value: current_user.applicant.id
         =f.file_field :resume_file
         =f.submit "UPLOAD NEW FILE"
 
