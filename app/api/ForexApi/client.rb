@@ -7,6 +7,7 @@ module ForexApi
     @datapath="app/api/ForexApi/countries_currency.csv"
 
     def self.convert_to_currency(alphcode, amount)
+      amount = amount.to_f
       currencies = "#{alphcode},PHP"
       if alphcode
         options = { query: {
@@ -24,13 +25,14 @@ module ForexApi
         end
         self.process_res(res)
       else
-        res.code=200
-        res.data="Country not found"
+        res["code"]=200
+        res["data"]="Country not found"
         self.process_res(res)
       end
     end
 
     def self.convert_to_country(country, amount)
+      amount = amount.to_f
       alphcode = find_currency(country)
       currencies = "#{alphcode},PHP"
       if alphcode
@@ -49,8 +51,8 @@ module ForexApi
         end
         self.process_res(res)
       else
-        res.code=200
-        res.data="Country not found"
+        res["code"]=200
+        res["data"]="Country not found"
         self.process_res(res)
       end
     end

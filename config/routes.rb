@@ -55,5 +55,9 @@ Rails.application.routes.draw do
   end
   resources :admins
 
+  namespace :api do
+    get '/convert_to_country', to: 'forex#convert_to_country'
+    get '/convert_to_currency', to: 'forex#convert_to_currency'
+  end
   # Defines the root path route ("/")
 end
