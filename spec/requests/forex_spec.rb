@@ -1,4 +1,4 @@
-# require 'rails_helper'
+require 'rails_helper'
 
 # RSpec.describe 'ArticlesController', type: :request do
 
@@ -10,3 +10,17 @@
 #   end
 
 # end
+
+RSpec.describe 'ForexController', type: :request do
+  let(:converter) { described_class.new }
+  describe "GET /convert_to_currency" do
+    it "returns converted currency" do
+
+
+    end
+
+    it "returns currency not found on incorrect currency" do
+    
+    end
+  end
+end
