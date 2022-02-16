@@ -20,19 +20,46 @@ Manpower agencies have to go through a screening process by the App Admin before
 ### Features:
 
 * Authentication (Log-in & Registration)
+
   ![](app/assets/images/docs/abrodie-landing.png)
+  
   ![](app/assets/images/docs/abrodie-signup1.png)
+  
   ![](app/assets/images/docs/abrodie-signup2.png)
+  
 * Guidelines
+
   ![](app/assets/images/docs/abrodie-guidelines.png)
+  
 * Real-time messaging
   
 * Upload of Resume
-* See jobs list (Applicant view and Agency view)
-* Agencies list 
-* Add Jobs (agency)
-* Reviews of agencies
-* Verify Agency (admin)
+
+  
+  
+* Jobs and Agencies List
+  * Applicant View
+  ![](app/assets/images/docs/abrodie-appjobs.png)
+  
+  * Agency View
+  ![](app/assets/images/docs/abrodie-agencyjobs.png)
+  
+  * Add Jobs (agency)
+  ![](app/assets/images/docs/abrodie-newjob.png)
+  
+* Agencies list (Admin)
+ 
+  ![](app/assets/images/docs/abrodie-agencies.png)
+
+* Applicant list
+
+  ![](app/assets/images/docs/abrodie-applicants.png)
+
+* Review of Agency
+  
+  ![](app/assets/images/docs/agency-review1.png)
+  
+  ![](app/assets/images/docs/agency-review2.png)
 
 # API: Currency Conversion 
 
