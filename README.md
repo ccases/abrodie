@@ -136,7 +136,7 @@ The following features are still in development/listed for improvement, and are 
    - Message formatting
    - Responsiveness
 3. Agency Verification (Admin)
-4. Edit own account feature (profile picture)
+4. Edit own account feature (Uploadinig profile picture and email)
 6. Breadcrumbs improvements
 
 
