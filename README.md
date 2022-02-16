@@ -30,3 +30,61 @@ Manpower agencies have to go through a screening process by the App Admin before
 * Reviews of agencies
 * Verify Agency (admin)
 
+# API: Currency Conversion 
+
+Base URL: Forex APIs to convert PHP to another currency
+Convert to country
+Convert PHP to the currency of the other country
+Endpoint: convert_to_country
+
+Example: Convert 20,000 PHP to Bulgarian currency (both amount and country are required)
+
+Example URL: abrodie.herokuapp.com/api/convert_to_country?country=bulgaria&amount=20000
+```
+Response:
+{
+    "code": 200,
+    "status": "success",
+    "data": {
+   	 "success": true,
+   	 "terms": "https://currencylayer.com/terms",
+   	 "privacy": "https://currencylayer.com/privacy",
+   	 "timestamp": 1644826266,
+   	 "source": "USD",
+   	 "quotes": {
+   		 "USDBGN": 1.725559,
+   		 "USDPHP": 51.339497
+   	 },
+   	 "converted_amount": 672.2150004703007
+    }
+}
+```
+
+# Convert to Currency
+
+Convert PHP to the target currency
+Endpoint: convert_to_currency
+Example: Convert 20,000 PHP to MYR (Malaysian Ringgit) (both amount and currency code are required)
+
+abrodie.herokuapp.com/api/convert_to_currency?currency=MYR&amount=20000
+
+```
+Response:
+{
+    "code": 200,
+    "status": "success",
+    "data": {
+   	 "success": true,
+   	 "terms": "https://currencylayer.com/terms",
+   	 "privacy": "https://currencylayer.com/privacy",
+   	 "timestamp": 1644826266,
+   	 "source": "USD",
+   	 "quotes": {
+   		 "USDMYR": 4.189874,
+   		 "USDPHP": 51.339497
+   	 },
+   	 "converted_amount": 1632.2224582761298
+    }
+}
+```
+
