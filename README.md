@@ -125,3 +125,18 @@ Response:
 }
 ```
 
+# Roadmap
+
+The following features are still in development/listed for improvement, and are meant to be released in a future version update: 
+
+1. Search feature in Landing Page
+2. Design-related
+   - Footer
+   - Applicant and Recruiter Profile
+   - Message formatting
+   - Responsiveness
+3. Agency Verification (Admin)
+4. Breadcrumbs improvements
+5. Edit own account
+
+
