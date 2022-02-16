@@ -32,10 +32,14 @@ Manpower agencies have to go through a screening process by the App Admin before
   ![](app/assets/images/docs/abrodie-guidelines.png)
   
 * Real-time messaging
+
+  ![](app/assets/images/docs/abrodie-msg1.png)
+  
+  ![](app/assets/images/docs/abrodie-msg2.png)
   
 * Upload of Resume
 
-  
+  ![](app/assets/images/docs/abrodie-resume.png)
   
 * Jobs and Agencies List
   * Applicant View
