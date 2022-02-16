@@ -130,14 +130,19 @@ Response:
 The following features are still in development/listed for improvement, and are meant to be released in a future version update: 
 
 1. Search feature in Landing Page
-2. Design-related
+2. Search feature in Messaging
+3. Notifications
+4. Design-related
+   - Forgot Password
    - Footer
    - Applicant and Recruiter Profile
    - Message formatting
    - Agency Review
    - Responsiveness
-3. Agency Verification (Admin)
-4. Edit own account feature (Uploadinig profile picture and email)
-6. Breadcrumbs improvements
+   - Frontend validations when adding jobs
+5. Agency Verification (Admin)
+6. Edit own account feature (Uploadinig profile picture and email)
+7. Breadcrumbs improvements
+8. Mailer feature
 
 
