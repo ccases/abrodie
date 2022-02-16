@@ -134,6 +134,7 @@ The following features are still in development/listed for improvement, and are 
    - Footer
    - Applicant and Recruiter Profile
    - Message formatting
+   - Review
    - Responsiveness
 3. Agency Verification (Admin)
 4. Edit own account feature (Uploadinig profile picture and email)
