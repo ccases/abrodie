@@ -8,7 +8,7 @@ class Review < ApplicationRecord
 
   def update_agency_rating
     agency = self.agency
-    n = agency.reviews.count + 1
+    n = agency.reviews.count
     avg = agency.average_rating
 
     avg = avg + (self.rating - avg)/n
