@@ -64,7 +64,7 @@ Response:
 }
 ```
 
-# Convert to Currency
+Convert to Currency
 
 Convert PHP to the target currency
 Endpoint: convert_to_currency
