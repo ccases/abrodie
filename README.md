@@ -20,9 +20,13 @@ Manpower agencies have to go through a screening process by the App Admin before
 ### Features:
 
 * Authentication (Log-in & Registration)
-
+  ![](app/assets/images/docs/abrodie-landing.png)
+  ![](app/assets/images/docs/abrodie-signup1.png)
+  ![](app/assets/images/docs/abrodie-signup2.png)
 * Guidelines
-* Real-time messaging 
+  ![](app/assets/images/docs/abrodie-guidelines.png)
+* Real-time messaging
+  
 * Upload of Resume
 * See jobs list (Applicant view and Agency view)
 * Agencies list 
