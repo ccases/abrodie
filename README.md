@@ -17,6 +17,8 @@ Both applicants and manpower agencies are able to register for accounts.
 Applicants only need to submit their updated resume and data.
 Manpower agencies have to go through a screening process by the App Admin before being listed as verified in the app. 
 
+<hr/>
+
 ### Features:
 
 * Authentication (Log-in & Registration)
