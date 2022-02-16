@@ -38,8 +38,9 @@
     
     #agency-reviews
       %h5="RATING: #{@rating.round(1)}/5"
-      -# -if current_user&.applicant
-      =link_to "Write a review", new_agency_review_path(@agency)
+      -if user_signed_in?
+        -if current_user.applicant
+          =link_to "Write a review", new_agency_review_path(@agency)
 
 .reviews-container
   =render partial: 'reviews/review', collection: @reviews
