@@ -141,8 +141,9 @@ The following features are still in development/listed for improvement, and are 
    - Responsiveness
    - Frontend validations when adding jobs
 5. Agency Verification (Admin)
-6. Edit own account feature (Uploadinig profile picture and email)
-7. Breadcrumbs improvements
-8. Mailer feature
+6. Edit own account feature (Uploading profile picture and email)
+7. Accept Application (Agency)
+8. Breadcrumbs improvements
+9. Mailer feature
 
 
