@@ -53,7 +53,7 @@ RSpec.describe "Users", type: :feature do
 
       attach_file("Avatar", Rails.root + "spec/fixtures/files/file.doc")
       click_button("Sign up")
-      expect(page).to have_content("Kamusta")
+      expect(page).to have_content("error")
     end
 
     it "redirects to guidelines page on sign up" do
